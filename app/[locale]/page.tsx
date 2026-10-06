@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { QuickInfo } from "@/components/quick-info";
+import { DestinationCards } from "@/components/destination-cards";
 import { MallNumbers } from "@/components/mall-numbers";
 import { Brands } from "@/components/brands";
 import { ArchitecturalBreak } from "@/components/architectural-break";
@@ -24,6 +25,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <QuickInfo />
+        <DestinationCards />
         <MallNumbers />
         <Brands />
         <ArchitecturalBreak />

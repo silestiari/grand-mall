@@ -8,13 +8,14 @@ import { homepageMedia } from "@/lib/homepage-media";
 export function Hero() {
     const t = useCopy();
     const heroCopy = useTranslations("homepageHero");
-    const headlineLines = heroCopy.raw("lines") as string[];
+    const originalLines = heroCopy.raw("lines") as string[];
+    const headlineLines = [originalLines[0], originalLines.slice(1).join(" ")];
     const reduce = useReducedMotion();
     return (<section className="hero hero-facade" aria-labelledby="hero-title">
       <div className="hero-image">
         {homepageMedia.hero.kind === "video" ? (<video autoPlay={!reduce} muted loop playsInline poster={homepageMedia.hero.poster} aria-hidden="true">
             <source src={homepageMedia.hero.src}/>
-          </video>) : (<Image src={homepageMedia.hero.src} alt={t(homepageMedia.hero.alt)} fill preload sizes="(max-width: 1000px) 100vw, 55vw"/>)}
+          </video>) : (<Image src={homepageMedia.hero.src} alt={t(homepageMedia.hero.alt)} fill preload sizes="100vw"/>)}
       </div>
       <div className="hero-shade"/>
       <div className="hero-content">
