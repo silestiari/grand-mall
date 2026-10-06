@@ -1,5 +1,4 @@
 import { useCopy } from "@/i18n/copy";
-import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { QuickInfo } from "@/components/quick-info";
@@ -20,9 +19,9 @@ import { Footer } from "@/components/footer";
 export default function Home() {
     const t = useCopy();
     return (<>
-      <Link className="skip-link" href="#main">{t("Skip to content")}</Link>
+      <a className="skip-link" href="#main">{t("Skip to content")}</a>
       <Header />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <Hero />
         <QuickInfo />
         <DestinationCards />

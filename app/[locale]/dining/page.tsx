@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/dining">
 export default function DiningPage() {
     const t = useCopy();
     const featured = ["big-chefs", "oliva-caf", "dunkin"].map(slug => diningVenues.find(venue => venue.slug === slug)!);
-    return <><Link className="skip-link" href="#main">{t("Skip to content")}</Link><Header variant="light"/><main id="main" className="dining-page">
+    return <><a className="skip-link" href="#main">{t("Skip to content")}</a><Header variant="light"/><main id="main" tabIndex={-1} className="dining-page">
     <section className="dining-page-hero" aria-labelledby="dining-page-title">
       <Image src={diningMedia.hero.src} alt={t(diningMedia.hero.alt)} fill sizes="100vw" preload/>
       <div className="dining-hero-shade"/>

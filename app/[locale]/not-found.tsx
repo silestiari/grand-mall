@@ -14,9 +14,9 @@ const destinations = [
 export default async function NotFound() {
   const t = await getCopy();
   return <>
-    <Link className="skip-link" href="#main">{t("Skip to content")}</Link>
+    <a className="skip-link" href="#main">{t("Skip to content")}</a>
     <Header variant="light" />
-    <main id="main" className={styles.page}>
+    <main id="main" tabIndex={-1} className={styles.page}>
       <section className={styles.hero} aria-labelledby="not-found-title">
         <div>
           <p className="eyebrow">GRAND MALL / 404</p>

@@ -258,6 +258,7 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
 @media (prefers-reduced-motion: reduce) { .store-page .store-detail-image img { transition: none; } }
 
 /* Search stays readable with long brand names and translated categories. */
+.search-status { margin-bottom: 14px; color: var(--accent); font-size: 12px; line-height: 1.5; }
 .search-dialog .search-results { padding: 4px; scrollbar-width: thin; }
 .search-dialog .search-results > a {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 24px;

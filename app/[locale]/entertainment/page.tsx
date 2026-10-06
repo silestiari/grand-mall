@@ -12,7 +12,7 @@ import { DirectoryCard, DirectoryCardList } from "@/components/directory-card";
 export async function generateMetadata({ params }: PageProps<"/[locale]/entertainment">): Promise<Metadata> { const { locale } = await params; return localizedMetadata(locale, "/entertainment", "Entertainment — Grand Mall Batumi", "Choose your pace at Grand Mall Batumi. Explore CAVEA, Bowling, Oktopus Fitness and Wonderland."); }
 export default function EntertainmentPage() {
     const t = useCopy();
-    return <><Link className="skip-link" href="#main">{t("Skip to content")}</Link><Header variant="light"/><main id="main" className="ent-page">
+    return <><a className="skip-link" href="#main">{t("Skip to content")}</a><Header variant="light"/><main id="main" tabIndex={-1} className="ent-page">
     <section className="ent-hero" aria-labelledby="ent-title">
       <Image src={entertainmentHero.src} alt={t(entertainmentHero.alt)} fill sizes="100vw" preload/>
       <div className="ent-hero-shade"/>

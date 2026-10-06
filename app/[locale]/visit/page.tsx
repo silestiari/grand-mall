@@ -13,9 +13,9 @@ const arrow = <span aria-hidden="true">→</span>;
 export default function VisitPage() {
     const t = useCopy();
     return <>
-    <Link className="skip-link" href="#main">{t("Skip to content")}</Link>
+    <a className="skip-link" href="#main">{t("Skip to content")}</a>
     <Header variant="light"/>
-    <main id="main" className="visit-page">
+    <main id="main" tabIndex={-1} className="visit-page">
       <section className="visit-page-hero" aria-labelledby="visit-page-title">
         <p className="eyebrow">{t("GRAND MALL / VISIT")}</p>
         <Reveal className="visit-page-intro">

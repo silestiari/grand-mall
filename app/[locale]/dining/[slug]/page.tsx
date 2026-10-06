@@ -1,6 +1,5 @@
 import { localizedMetadata } from "@/i18n/metadata";
 import { getCopy } from "@/i18n/server";
-import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
@@ -18,5 +17,5 @@ export default async function DiningVenuePage({ params }: {
     const venue = getDiningVenue((await params).slug);
     if (!venue)
         notFound();
-    return <><Link className="skip-link" href="#main">{t("Skip to content")}</Link><Header variant="light"/><main id="main" className="dining-venue-page"><DiningDetail venue={venue}/></main><Footer home={false}/></>;
+    return <><a className="skip-link" href="#main">{t("Skip to content")}</a><Header variant="light"/><main id="main" tabIndex={-1} className="dining-venue-page"><DiningDetail venue={venue}/></main><Footer home={false}/></>;
 }

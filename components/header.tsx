@@ -132,8 +132,9 @@ export function Header({ variant = "hero" }: {
           </div>
           <h2 id="search-title">{t("Find your favourite.")}</h2>
           <label className="eyebrow" htmlFor="store-search">{t("SEARCH GRAND MALL")}</label>
-          <input ref={searchInput} id="store-search" type="search" placeholder={t("A name, a category\u2026")} value={query} onChange={(event) => setQuery(event.target.value)}/>
-          <div className="search-results" aria-live="polite">
+          <input ref={searchInput} id="store-search" type="search" aria-controls="search-results" aria-describedby="search-help" placeholder={t("A name, a category\u2026")} value={query} onChange={(event) => setQuery(event.target.value)}/>
+          <p className="search-status" role="status" aria-atomic="true">{t("Results found: {value0}", { value0: results.length })}</p>
+          <div className="search-results" id="search-results">
             {results.length ? (results.map((place) => (<Link key={place.id} href={place.detailUrl} onClick={() => {
                 search.current?.close();
             }}>
@@ -142,7 +143,7 @@ export function Header({ variant = "hero" }: {
                   <span aria-hidden="true">↗</span>
                 </Link>))) : (<div className="search-empty"><p>{t("No places found. Try another name or category.")}</p><button className="experience-link" onClick={() => { setQuery(""); searchInput.current?.focus(); }}>{t("CLEAR SEARCH ")}<span aria-hidden="true">→</span></button></div>)}
           </div>
-          <p className="selection-note">{t("Find your next stop in the Grand Mall directory.")}</p>
+          <p className="selection-note" id="search-help">{t("Use Tab to browse results and Escape to close search.")}</p>
         </div>
       </dialog>
     </>);
