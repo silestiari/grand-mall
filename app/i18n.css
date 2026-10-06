@@ -208,3 +208,51 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
 @media (prefers-reduced-motion: reduce) {
   .destination-card, .destination-card > img, .destination-arrow, .destination-card::after, .story-image-link::after { transition: none; }
 }
+
+/* Venue details: a calm information panel and a clear map action. */
+.store-page .store-detail-layout { gap: 40px; }
+.store-page .store-detail-image, .dining-venue-page .dining-detail-hero {
+  border: 1px solid #183e3626; border-radius: 6px;
+}
+:is(.store-page, .dining-venue-page) .store-detail-information {
+  padding: 28px; border: 1px solid #183e3626; border-radius: 6px;
+  background: linear-gradient(145deg, #e5ece1, #f9f7f1 85%);
+}
+.dining-venue-page .store-detail-information { background: linear-gradient(145deg, #eee5d8, #f9f7f1 85%); }
+:is(.store-page, .dining-venue-page) .store-detail-information dl {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+}
+:is(.store-page, .dining-venue-page) .store-detail-information dl > div {
+  display: block; padding: 18px; border: 1px solid #183e361a; border-radius: 4px; background: #ffffff66;
+}
+:is(.store-page, .dining-venue-page) .store-detail-information dl > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+:is(.store-page, .dining-venue-page) .store-detail-information dt { margin-bottom: 12px; font-size: 10px; }
+:is(.store-page, .dining-venue-page) .store-detail-information dd { font-size: 22px; overflow-wrap: anywhere; }
+:is(.store-page, .dining-venue-page) .store-detail-actions { gap: 12px; }
+:is(.store-page, .dining-venue-page) .store-detail-actions .experience-link {
+  width: 100%; padding: 18px; min-height: 60px; border: 1px solid #183e3633; border-radius: 4px;
+  background: #ffffff66; line-height: 1.5;
+}
+:is(.store-page, .dining-venue-page) .store-detail-actions .experience-link:first-child {
+  background: linear-gradient(135deg, #2e6151, #153f35); color: #fff; border-color: #153f35;
+}
+:is(.store-page, .dining-venue-page) .store-detail-actions .experience-link:first-child span { color: #fff; }
+.dining-venue-page .dining-detail-practical { gap: 48px; }
+.store-page .store-detail-image img { transition: transform .75s cubic-bezier(.2,.65,.3,1); }
+@media (any-hover: hover) {
+  .store-page .store-detail-image:hover img, .dining-venue-page .dining-detail-hero:hover img { transform: scale(1.055); }
+}
+@media (max-width: 1100px) {
+  :is(.store-page, .dining-venue-page) .store-detail-information { padding: 22px; }
+  :is(.store-page, .dining-venue-page) .store-detail-information dl { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 700px) {
+  :is(.store-page, .dining-venue-page) .store-detail-information { padding: 20px; }
+  :is(.store-page, .dining-venue-page) .store-detail-information dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :is(.store-page, .dining-venue-page) .store-detail-information dd { font-size: 20px; }
+  :is(.store-page, .dining-venue-page) .store-detail-information dl > div { padding: 14px; }
+}
+@media (max-width: 380px) {
+  :is(.store-page, .dining-venue-page) .store-detail-information dl { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .store-page .store-detail-image img { transition: none; } }
