@@ -1,16 +1,17 @@
 import { visitorInformation as visitorData, visitorFields } from "@/data/visitor-info";
 // CMS-ready content. Drafts are never published just to fill a layout.
 // Verified sources and practical data: 2026-10-04.
+import { officialMedia } from "./official-media";
 export const completionMedia = {
-  eventGathering: { src: "/images/events-together.jpg", alt: "Friends meeting in a light-filled contemporary public atrium" },
-  eventStyle: { src: "/images/events-style.jpg", alt: "A hand choosing a jacket from a contemporary clothing rail" },
-  eventEvening: { src: "/images/events-evening.jpg", alt: "Friends talking over a restaurant table in warm evening light" },
-  offerTailoring: { src: "/images/offers-tailoring.jpg", alt: "Ivory tailoring and textured fabric in natural light" },
-  offerDetails: { src: "/images/offers-details.jpg", alt: "Leather accessories and a cream scarf on a sunlit stone ledge" },
+  eventGathering: officialMedia.exterior,
+  eventStyle: officialMedia.mango,
+  eventEvening: officialMedia.cafe,
+  offerTailoring: officialMedia.zara,
+  offerDetails: officialMedia.massimo,
   batumi: { src: "/images/batumi-coast.jpg", alt: "A contemporary seaside promenade beside the Black Sea in Batumi" },
-  socialFashion: { src: "/images/lifestyle-fashion.jpg", alt: "A flowing coat and shopping bag in an everyday fashion moment" },
-  socialFood: { src: "/images/lifestyle-table.jpg", alt: "A shared lunch on a sunlit table" },
-  socialArchitecture: { src: "/images/lifestyle-architecture.jpg", alt: "Glass, stone and skylight details in contemporary retail architecture" },
+  socialFashion: officialMedia.massimo,
+  socialFood: officialMedia.restaurant,
+  socialArchitecture: officialMedia.exterior,
   socialCity: { src: "/images/lifestyle-batumi.jpg", alt: "People walking beside the Black Sea on a Batumi promenade" },
 };
 

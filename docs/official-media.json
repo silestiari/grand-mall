@@ -1,0 +1,156 @@
+{
+  "note": "Source attribution records provenance, not an image license. The facade is a rendering; venue images are official promotional material, not verified venue interior photographs.",
+  "assets": [
+    {
+      "file": "/images/official/grand-mall-exterior.webp",
+      "source": "https://grandmall.com.ge/images/grandmall-main.jpg",
+      "retrieved": "2026-10-06",
+      "kind": "architectural rendering",
+      "originalDimensions": [
+        2368,
+        1000
+      ],
+      "dimensions": [
+        1920,
+        811
+      ],
+      "bytes": 204536,
+      "sourceSha256": "9343d884b16d6b6e8be310900dc747ae06d34db004a49aa0a607e48fe858f59d"
+    },
+    {
+      "file": "/images/official/oliva-cafe.webp",
+      "source": "https://grandmall.com.ge/images/shops_banners/70-465b74d8e189769f7d980b9dd8d70576.jpg",
+      "retrieved": "2026-10-06",
+      "kind": "venue image",
+      "originalDimensions": [
+        1320,
+        879
+      ],
+      "dimensions": [
+        1320,
+        879
+      ],
+      "bytes": 187492,
+      "sourceSha256": "b4cc64b979f4cda294ef0d1e354d88f8b4e16acebae97242df3ec8d1983136a1"
+    },
+    {
+      "file": "/images/official/cavea.webp",
+      "source": "https://grandmall.com.ge/images/shops_banners/92-d18002859d89ec7da7ab2451dff1d0f2.jpeg",
+      "retrieved": "2026-10-06",
+      "kind": "promotional image",
+      "originalDimensions": [
+        576,
+        384
+      ],
+      "dimensions": [
+        576,
+        384
+      ],
+      "bytes": 13460,
+      "sourceSha256": "561a837dcdb3acafccf9d345ca85f5cf089e534084212ad19cd7a095c2430359"
+    },
+    {
+      "file": "/images/official/bowling.webp",
+      "source": "https://grandmall.com.ge/images/shops_banners/47-61a45ab20cb990b20c19f23bfffc5ec5.jpeg",
+      "retrieved": "2026-10-06",
+      "kind": "promotional image",
+      "originalDimensions": [
+        604,
+        453
+      ],
+      "dimensions": [
+        604,
+        453
+      ],
+      "bytes": 11158,
+      "sourceSha256": "99dd0781fe9db628707274b0b8332054ca2c5f84d6d450e86b036cfd02b242d9"
+    },
+    {
+      "file": "/images/official/oktopus.webp",
+      "source": "https://grandmall.com.ge/images/shops_banners/octopus.webp",
+      "retrieved": "2026-10-06",
+      "kind": "promotional banner",
+      "originalDimensions": [
+        1137,
+        360
+      ],
+      "dimensions": [
+        1137,
+        360
+      ],
+      "bytes": 37236,
+      "sourceSha256": "5581d18e6ddd4b7a7feba1faa60d014a1731af6436b3021e4a5cee0482a1edfd"
+    },
+    {
+      "file": "/images/official/wonderland.webp",
+      "source": "https://grandmall.com.ge/images/shops_banners/wonderland.webp",
+      "retrieved": "2026-10-06",
+      "kind": "promotional banner",
+      "originalDimensions": [
+        1137,
+        360
+      ],
+      "dimensions": [
+        1137,
+        360
+      ],
+      "bytes": 37058,
+      "sourceSha256": "f26d4824219bf24c4aa737741760f4108cb752a7f6990cc2d2c60834d523efd8"
+    },
+    {
+      "file": "/images/dining/big-chefs.webp",
+      "source": "https://grandmall.com.ge/images/shops/37-brand_hero_image-383e452934bb4348f780082fc4ecea9d.png",
+      "retrieved": "2026-10-04",
+      "kind": "promotional image",
+      "dimensions": [
+        1024,
+        941
+      ],
+      "bytes": 135880
+    },
+    {
+      "file": "/images/dining/dunkin.webp",
+      "source": "https://grandmall.com.ge/images/shops/40-brand_visit_image-931cd83b1d5f12fce77f140ffaa16024.png",
+      "retrieved": "2026-10-04",
+      "kind": "promotional image",
+      "dimensions": [
+        653,
+        904
+      ],
+      "bytes": 46902
+    },
+    {
+      "file": "/images/stores/zara.webp",
+      "source": "https://grandmall.com.ge/images/shops/61-brand_hero_image-c017c4e6968bf95eda5af0340da3df44.avif",
+      "retrieved": "2026-10-04",
+      "kind": "fashion campaign",
+      "dimensions": [
+        1024,
+        941
+      ],
+      "bytes": 16060
+    },
+    {
+      "file": "/images/stores/massimo-duti.webp",
+      "source": "https://grandmall.com.ge/images/shops/62-brand_hero_image-50492493a9f887d81152e0d28954fc39.png",
+      "retrieved": "2026-10-04",
+      "kind": "fashion campaign",
+      "dimensions": [
+        1024,
+        941
+      ],
+      "bytes": 92856
+    },
+    {
+      "file": "/images/stores/mango.webp",
+      "source": "https://grandmall.com.ge/images/shops/63-brand_hero_image-4365f1e87a95184b4b61798b121109fa.png",
+      "retrieved": "2026-10-04",
+      "kind": "fashion campaign",
+      "dimensions": [
+        1024,
+        941
+      ],
+      "bytes": 96872
+    }
+  ]
+}

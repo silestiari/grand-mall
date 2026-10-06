@@ -1,4 +1,5 @@
-// Replace media here when approved Grand Mall assets are available.
+import { officialMedia } from "./official-media";
+// Homepage assets from the existing Grand Mall website.
 // For video, set kind: "video", src to the clip, and poster to its still image.
 type HeroMedia =
   | { kind: "image"; src: string }
@@ -10,10 +11,7 @@ export const homepageMedia: {
 } = {
   hero: {
     kind: "image",
-    src: "/images/hero-light-study.svg",
+    src: officialMedia.exterior.src,
   },
-  brands: {
-    src: "/images/fashion-gallery-placeholder.jpg",
-    alt: "Spacious contemporary fashion gallery with glass storefronts and natural light",
-  },
+  brands: officialMedia.zara,
 };
