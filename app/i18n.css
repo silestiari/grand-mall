@@ -163,6 +163,7 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .destination-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px #183e3620; }
   .destination-card:hover > img { transform: scale(1.035); }
+  .destination-ocean:hover > img { transform: scale(1.055); }
   .destination-card:hover::after, .destination-card:focus-visible::after { opacity: 1; }
   .destination-card:hover .destination-arrow { transform: rotate(45deg); background: #ffffff18; }
   .story-image-link:hover::after { opacity: .3; }

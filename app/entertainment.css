@@ -30,7 +30,6 @@
 .ent-visual { position: relative; overflow: hidden; background: #1e2421; }
 .ent-visual > a { display: block; position: absolute; inset: 0; }
 .ent-visual img { object-fit: cover; transition: transform .8s ease; }
-.ent-visual a:hover img { transform: scale(1.025); }
 .ent-cavea h2 { font-size: clamp(95px, 15vw, 260px); }
 .ent-cavea .ent-visual { height: clamp(350px, 45vw, 700px); margin-top: 34px; }
 .ent-venue-copy > p { font-size: 20px; line-height: 1.6; max-width: 430px; color: #c5cdc6; }
@@ -130,6 +129,9 @@
   .ent-detail-information dl > div { display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 14px; }
   .ent-detail-information dt { margin-bottom: 0; font-size: 9px; }
   .ent-detail-information dd { font-size: 16px; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .ent-visual a:hover img { transform: scale(1.055); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ent-visual img, .ent-quick-link, .ent-quick-arrow { transition: none; }
