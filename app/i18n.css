@@ -128,6 +128,14 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
 }
 .hero-facade .hero-location { color: #9eb8b0; }
 /* Three destinations retain photography, with restrained colored depth. */
+.entertainment-section .immersive-image img { transition: transform .75s cubic-bezier(.2,.65,.3,1); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .entertainment-experience:hover .entertainment-image img,
+  .family-experience:hover .family-image img { transform: scale(1.055); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .entertainment-section .immersive-image img { transition: none; }
+}
 .destination-cards {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px; padding: 48px var(--gutter) 12px;
