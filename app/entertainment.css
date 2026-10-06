@@ -130,10 +130,10 @@
   .ent-detail-information dt { margin-bottom: 0; font-size: 9px; }
   .ent-detail-information dd { font-size: 16px; }
 }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .ent-visual a:hover img { transform: scale(1.055); }
+@media (any-hover: hover) {
+  .ent-visual:hover img { transform: scale(1.055); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ent-visual img, .ent-quick-link, .ent-quick-arrow { transition: none; }
-  .ent-visual a:hover img, .ent-quick-link:hover .ent-quick-arrow { transform: none; }
+  .ent-quick-link:hover .ent-quick-arrow { transform: none; }
 }
