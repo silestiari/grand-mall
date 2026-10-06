@@ -109,7 +109,7 @@ export function Header({ variant = "hero" }: {
         </nav>
         <div className="mobile-menu-bottom">
           <button onClick={openSearch}>{t("Search Grand Mall \u2197")}</button>
-          <Link href="/map">{t("Mall Map \u2197")}</Link>
+          <Link href="/map" onClick={() => menu.current?.close()}>{t("Mall Map \u2197")}</Link>
           <Languages />
           <Link href={`mailto:${visitorInformation.email}`}>{visitorInformation.email}</Link>
         </div>
@@ -140,7 +140,7 @@ export function Header({ variant = "hero" }: {
                   <span>{place.name}</span>
                   <small>{t(place.group)} / {t(place.category)}{place.floor ? t(" / Floor {value0}", { value0: place.floor }) : ""}</small>
                   <span aria-hidden="true">↗</span>
-                </Link>))) : (<p>{t("No places found. Try another name or category.")}</p>)}
+                </Link>))) : (<div className="search-empty"><p>{t("No places found. Try another name or category.")}</p><button className="experience-link" onClick={() => { setQuery(""); searchInput.current?.focus(); }}>{t("CLEAR SEARCH ")}<span aria-hidden="true">→</span></button></div>)}
           </div>
           <p className="selection-note">{t("Find your next stop in the Grand Mall directory.")}</p>
         </div>
