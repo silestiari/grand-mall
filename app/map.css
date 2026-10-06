@@ -95,4 +95,46 @@
   .map-selection h2 { font-size: 32px; }
   .map-selection-top .eyebrow { font-size: 9px; }
 }
-@media (prefers-reduced-motion: reduce) { .map-result-arrow span { transition: none; } }
+/* Directory controls and place cards share the site's quiet green palette. */
+.map-directory-search input {
+  padding: 16px; border: 1px solid #183e3633; border-radius: 6px;
+  background: #f9f7f1; color: #173b32; min-height: 56px;
+}
+.map-directory-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.map-directory-categories { gap: 8px; border-bottom: 0; }
+.map-directory-categories button {
+  padding: 10px 14px; border: 1px solid #183e3626; border-radius: 4px;
+  background: #f9f7f1; line-height: 1.5;
+}
+.map-directory-categories button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #2e6151, #153f35); color: #fff; border-color: #153f35;
+}
+.map-result-list li {
+  margin-bottom: 10px; border: 1px solid #183e3626; border-radius: 6px;
+  background: linear-gradient(145deg, #e7eee2, #f9f7f1 85%);
+}
+.map-result-list li button, .map-result-list li button[aria-pressed="true"] { padding: 18px 16px; }
+.map-result-arrow { margin: 12px 12px 12px 0; width: 44px; align-self: center; border: 1px solid #183e3633; border-radius: 50%; }
+.map-result-list li.map-result-selected {
+  border-color: #175e59; box-shadow: inset 3px 0 #175e59;
+  background: linear-gradient(145deg, #cfdfcd, #eef2e8 85%);
+}
+.map-floor-controls > div { padding: 6px; border: 1px solid #183e3626; border-radius: 6px; background: #f9f7f1; }
+.map-floor-controls button { border-radius: 4px; background: #eef1e8; }
+.map-floor-controls button[aria-pressed="true"] { background: linear-gradient(135deg, #2e6151, #153f35); }
+.map-canvas { border-radius: 6px; background: linear-gradient(145deg, #e5ecde, #f3f3e9 85%); }
+.map-selection {
+  padding: 24px; border: 1px solid #183e3626; border-radius: 6px;
+  background: linear-gradient(135deg, #e5ece1, #f9f7f1 85%);
+}
+.map-selection .experience-link { padding: 16px; border: 1px solid #183e3633; border-radius: 4px; background: #ffffff66; }
+.map-selection:has(#selected-place-title) { border-color: #175e5970; }
+@media (max-width: 700px) {
+  .map-directory-categories { gap: 8px; }
+  .map-directory-categories button { padding: 10px 12px; }
+  .map-selection { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-result-arrow span { transition: none; }
+  .map-result-arrow:hover span { transform: none; }
+}
