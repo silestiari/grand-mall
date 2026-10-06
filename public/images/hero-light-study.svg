@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200" fill="none">
+  <title>Light and space — abstract architectural placeholder</title>
+  <defs>
+    <linearGradient id="space" x1="180" y1="950" x2="1650" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#344f56"/><stop offset=".45" stop-color="#668b92"/><stop offset="1" stop-color="#dce8e4"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="1000" y1="1100" x2="1640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#86a9aa" stop-opacity=".12"/><stop offset=".55" stop-color="#c5dad6" stop-opacity=".55"/><stop offset="1" stop-color="#f7f1df" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="1790" y1="0" x2="1190" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff8df" stop-opacity=".95"/><stop offset="1" stop-color="#ebd9b4" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1710 200) rotate(125) scale(900 620)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7dc" stop-opacity=".65"/><stop offset="1" stop-color="#fff7dc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#space)" d="M0 0h1920v1200H0z"/>
+  <path fill="url(#glow)" d="M0 0h1920v1200H0z"/>
+  <path d="m1080 0 840 0v1200H730z" fill="url(#glass)"/>
+  <path d="M1515 0h190L980 1200H620z" fill="url(#sun)"/>
+  <path d="M1870 0h50v1200h-620z" fill="url(#glass)"/>
+  <g stroke="#f5f4e8" stroke-opacity=".28">
+    <path d="M1078 0 730 1200M1350 0 1000 1200M1630 0l-350 1200M1900 0l-350 1200"/>
+    <path d="m930 370 990-92M832 710l1088-76M735 1044l1185-42"/>
+  </g>
+  <path d="m1390 0-354 1200" stroke="#f8f2df" stroke-width="5" stroke-opacity=".35"/>
+  <path d="m1880 0-350 1200" stroke="#fcf6e4" stroke-width="12" stroke-opacity=".45"/>
+</svg>

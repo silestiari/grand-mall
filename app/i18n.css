@@ -1,0 +1,90 @@
+html[lang="ru"] body { font-family: var(--font-russian), var(--font-geist-sans), Arial, sans-serif; }
+html[lang="ka"] body { font-family: var(--font-georgian), var(--font-geist-sans), sans-serif; }
+.footer-language-option > a { display: block; font-size: 13px; padding: 6px 0; }
+.footer-language-option > a[aria-current] { color: var(--accent-light, #91bab0); }
+html[lang="ka"] .day-play .day-title { font-size: clamp(90px, 17vw, 290px); }
+html[lang="ka"] :is(h1, h2, .day-title) { line-height: 1.05; }
+html[lang="ru"] .visit-page h1 { font-size: clamp(52px, 6vw, 110px); }
+html:is([lang="ru"], [lang="ka"]) .hero { height: auto; min-height: max(700px, 100svh); max-height: none; }
+/* Each translated line is a flex row, not an automatic wrap inside one span. */
+html:is([lang="ru"], [lang="ka"]) .hero .hero-headline-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+html[lang="ru"] .hero h1 {
+  --hero-line-height: .94;
+  font-size: clamp(110px, min(8vw, 16svh), 170px);
+  line-height: var(--hero-line-height);
+  row-gap: .10em;
+  max-width: min(100%, 11ch);
+}
+html[lang="ka"] .hero h1 {
+  --hero-line-height: 1.08;
+  font-size: clamp(64px, min(12.1vw, 20svh), 200px);
+  line-height: var(--hero-line-height);
+  row-gap: .32em;
+  max-width: min(100%, 12ch);
+}
+html:is([lang="ru"], [lang="ka"]) .hero .hero-headline-lines > span {
+  line-height: var(--hero-line-height);
+  margin: 0;
+  flex-shrink: 0;
+}
+/* Fit three Russian lines and the supporting content within a desktop viewport. */
+@media (min-width: 1101px) {
+  html[lang="ru"] .hero { min-height: 100svh; }
+}
+@media (min-width: 1101px) and (max-height: 800px) {
+  html[lang="ru"] .hero h1 {
+    font-size: clamp(96px, min(8vw, 15svh), 150px);
+    row-gap: .08em;
+  }
+  html[lang="ru"] .hero-content { padding-top: 112px; padding-bottom: 80px; }
+  html[lang="ru"] .hero-eyebrow { margin-bottom: 20px; }
+  html[lang="ru"] .hero-details { margin-top: 32px; }
+  html[lang="ka"] .hero h1 {
+    font-size: clamp(64px, min(12.1vw, 18svh), 170px);
+    row-gap: .24em;
+  }
+}
+html[lang="ru"] .ent-hero h1 {
+  font-size: clamp(64px, 9.8vw, 180px);
+  max-width: 14ch;
+  line-height: 1.04;
+}
+html[lang="ka"] .ent-hero h1 {
+  font-size: clamp(64px, 10.5vw, 190px);
+  max-width: 13ch;
+  line-height: 1.08;
+}
+@media (max-width: 1100px) {
+  html:is([lang="ru"], [lang="ka"]) .hero { min-height: max(680px, 100svh); }
+  html[lang="ru"] .hero h1 { font-size: clamp(60px, 10.4vw, 120px); }
+  html[lang="ka"] .hero h1 { font-size: clamp(60px, 10.8vw, 125px); }
+}
+@media (max-width: 700px) {
+  html:is([lang="ru"], [lang="ka"]) .hero { min-height: max(620px, 100svh); }
+  html[lang="ru"] .hero h1 {
+    --hero-line-height: 1.04;
+    font-size: clamp(38px, 12.6vw, 88px);
+    row-gap: .12em;
+  }
+  html[lang="ka"] .hero h1 { font-size: clamp(38px, 13.2vw, 92px); }
+  html:is([lang="ru"], [lang="ka"]) .hero h1 > span:first-child { font-size: 1.3em; }
+  html[lang="ru"] .day-shop .day-title,
+  html[lang="ka"] .day-shop .day-title { font-size: 20vw; }
+  html[lang="ka"] .day-play .day-title { font-size: 18vw; }
+  html[lang="ru"] .dining-hero-content h1 { font-size: 14vw; }
+  html[lang="ka"] .dining-hero-content h1 { font-size: 14vw; }
+  html[lang="ka"] :is(.dining-page-intro, .dining-directory-page) h2 { font-size: 10.5vw; }
+  html[lang="ka"] .ent-quick-nav h2 { font-size: 10.5vw; }
+  html[lang="ka"] .visit-page h2 { font-size: 8.5vw; }
+  html[lang="ka"] .offer-story { min-width: 0; }
+  html[lang="ka"] .story-meta { flex-wrap: wrap; gap: 10px; }
+  html[lang="ka"] .offer-story h3 { overflow-wrap: anywhere; }
+  html[lang="ka"] .batumi-content h2 { font-size: 12vw; }
+  html[lang="ru"] .visit-page h1 { font-size: 10vw; }
+  html[lang="ru"] .ent-hero h1 { font-size: clamp(36px, 12.5vw, 88px); }
+  html[lang="ka"] .ent-hero h1 { font-size: clamp(36px, 13vw, 92px); }
+}

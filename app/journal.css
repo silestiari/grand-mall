@@ -1,0 +1,54 @@
+.journal-page { padding: 142px var(--gutter) 84px; }
+.journal-hero { padding-bottom: 44px; border-bottom: 1px solid var(--line); }
+.journal-hero .eyebrow { color: var(--accent); }
+.journal-hero h1 { font-size: clamp(64px,9.5vw,160px); font-weight: 500; line-height: .91; letter-spacing: -.065em; margin-top: 40px; }
+.journal-empty { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.08fr); gap: 72px; align-items: center; padding-top: 54px; }
+.journal-empty-copy > .eyebrow { color: var(--accent); }
+.journal-empty h2 { font-size: clamp(34px,3.9vw,64px); font-weight: 400; letter-spacing: -.05em; line-height: 1.06; margin: 26px 0; }
+.journal-empty-copy > p:not(.eyebrow) { font-size: 15px; line-height: 1.7; max-width: 340px; color: var(--muted); }
+.journal-atmosphere { position: relative; aspect-ratio: 1.08; overflow: hidden; }
+.journal-atmosphere img, .journal-story-image img, .journal-detail-image img { object-fit: cover; }
+.journal-social { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-top: 28px; }
+.journal-page .experience-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 44px; font-size: 11px; }
+.journal-brand-link { margin-top: 16px; }
+.journal-page a:hover { color: var(--accent); }
+.journal-featured { max-width: 1050px; margin: 52px 0 72px; }
+.journal-story-image { position: relative; display: block; aspect-ratio: 1.5; overflow: hidden; }
+.journal-meta { display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: space-between; color: var(--accent); margin-top: 24px; }
+.journal-featured h2 { font-size: clamp(36px,5.5vw,82px); font-weight: 400; line-height: 1.03; letter-spacing: -.05em; margin: 22px 0; overflow-wrap: anywhere; }
+.journal-story h2 { font-size: clamp(28px,3.3vw,50px); font-weight: 400; line-height: 1.08; letter-spacing: -.045em; margin: 20px 0; overflow-wrap: anywhere; }
+.journal-featured h2 span, .journal-story h2 span { color: var(--accent); }
+.journal-featured p, .journal-story p { font-size: 15px; line-height: 1.7; color: var(--muted); max-width: 540px; margin-bottom: 24px; }
+.journal-upcoming { border-top: 1px solid var(--line); padding-top: 40px; }
+.journal-section-title { font-size: clamp(30px,4vw,62px); font-weight: 400; letter-spacing: -.05em; margin-bottom: 38px; }
+.journal-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 64px 54px; }
+.journal-offers-list { padding-top: 54px; }
+.journal-offer:nth-child(even) { padding-top: 80px; }
+.journal-offer .journal-story-image { aspect-ratio: .94; }
+.journal-detail-label { color: var(--accent); margin-top: 42px; }
+.journal-detail h1 { font-size: clamp(48px,7.5vw,120px); font-weight: 400; letter-spacing: -.055em; line-height: 1.02; margin: 28px 0; max-width: 1150px; overflow-wrap: anywhere; }
+.journal-detail-meta { display: flex; flex-wrap: wrap; gap: 18px 40px; color: var(--accent); font-size: 14px; margin-bottom: 32px; }
+.journal-detail-image { position: relative; aspect-ratio: 2; overflow: hidden; }
+.journal-detail-copy { max-width: 740px; margin: 42px auto; }
+.journal-detail-copy p { font-size: 16px; line-height: 1.8; white-space: pre-line; margin: 22px 0; }
+.journal-detail-copy .journal-detail-lead { font-size: clamp(22px,2.6vw,34px); letter-spacing: -.025em; line-height: 1.5; }
+.journal-detail > .experience-link:last-child { margin-top: 32px; }
+@media (max-width: 1100px) { .journal-empty { gap: 36px; } .journal-grid { gap: 40px 30px; } }
+@media (max-width: 700px) {
+  .journal-page { padding-top: 110px; padding-bottom: 48px; }
+  .journal-hero { padding-bottom: 30px; }
+  .journal-hero .section-topline > span { display: none; }
+  .journal-hero h1 { font-size: clamp(42px,11.5vw,80px); margin-top: 28px; }
+  .journal-empty { grid-template-columns: 1fr; gap: 32px; padding-top: 34px; }
+  .journal-empty h2 { font-size: clamp(32px,8.8vw,48px); margin: 22px 0; }
+  .journal-empty-copy > p:not(.eyebrow) { font-size: 14px; }
+  .journal-atmosphere { aspect-ratio: 1.3; }
+  .journal-social { margin-top: 22px; gap: 12px 28px; }
+  .journal-featured { margin: 34px 0 42px; }
+  .journal-grid { grid-template-columns: 1fr; gap: 36px; }
+  .journal-offer:nth-child(even) { padding-top: 0; }
+  .journal-featured h2 { font-size: 36px; }
+  .journal-detail h1 { font-size: clamp(40px,10vw,64px); }
+  .journal-detail-image { aspect-ratio: 1.25; }
+  .journal-detail-meta { gap: 14px; flex-direction: column; }
+}

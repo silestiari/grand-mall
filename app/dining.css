@@ -1,0 +1,103 @@
+/* Dining uses the existing typography, colour and spacing tokens. */
+.dining-page { padding-top: 96px; }
+.dining-page-hero { position: relative; min-height: 620px; height: 80svh; max-height: 1000px; color: #fff; isolation: isolate; }
+.dining-page-hero > img { object-fit: cover; object-position: 62% 55%; z-index: -2; }
+.dining-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #14150ed1 0%, #14150e70 52%, #14150e18 100%); z-index: -1; }
+.dining-hero-content { min-height: inherit; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 42px var(--gutter) 38px; }
+.dining-hero-content > .eyebrow { color: #fff; }
+.dining-hero-content h1 { font-size: clamp(90px, 10vw, 180px); line-height: .85; letter-spacing: -.065em; font-weight: 500; padding: 30px 0; }
+.dining-hero-content h1 span { display: block; }
+.dining-hero-content h1 span:last-child { font-size: .6em; margin-top: .27em; }
+.dining-hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+.dining-hero-bottom > p { font-size: 15px; line-height: 1.6; }
+.dining-hero-bottom .experience-link { color: #fff; }
+.dining-hero-bottom .experience-link span { color: #fff; }
+.dining-page-hero a:focus-visible { outline-color: #cae6dd; }
+.dining-page-intro, .dining-page-featured, .dining-directory-page { padding: 90px var(--gutter); }
+.dining-page-intro h2, .dining-directory-page h2 { font-size: clamp(56px, 6.7vw, 128px); font-weight: 500; letter-spacing: -.06em; line-height: .98; margin: 38px 0 42px; }
+.dining-intro-break { display: none; }
+.dining-intro-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 7vw; align-items: start; }
+.dining-photo { position: relative; overflow: hidden; background: #e7e3da; }
+.dining-photo img { object-fit: cover; transition: transform .7s ease; }
+.dining-intro-large { aspect-ratio: 1.38; }
+.dining-intro-side { padding-top: 18px; }
+.dining-intro-side p { font-size: clamp(22px, 2.1vw, 36px); line-height: 1.3; letter-spacing: -.025em; margin-bottom: 28px; }
+.dining-intro-side .eyebrow { color: var(--accent); }
+.dining-intro-small { width: 80%; aspect-ratio: .8; margin: 50px 0 0 auto; }
+.dining-page-featured { padding-top: 0; padding-bottom: 36px; }
+.dining-page-featured .section-topline { border-top: 1px solid var(--line); padding-top: 24px; }
+.dining-feature { display: grid; grid-template-columns: 1.35fr 1fr; gap: 8vw; align-items: center; margin-top: 65px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+.dining-feature-image { display: block; aspect-ratio: 1.2; }
+.dining-feature-image:hover img { transform: scale(1.025); }
+.dining-feature-copy > .eyebrow { color: var(--accent); }
+.dining-feature-copy h3 { font-size: clamp(42px, 5.5vw, 94px); font-weight: 500; line-height: .98; letter-spacing: -.055em; margin-top: 28px; overflow-wrap: anywhere; }
+.dining-feature-copy h3 a { transition: color .2s; }
+.dining-feature-copy h3 a:hover { color: var(--accent); }
+.dining-feature-description { font-size: 18px; line-height: 1.6; max-width: 340px; margin-top: 26px; }
+.dining-feature-floor { margin: 28px 0 34px; }
+.dining-feature-2 { grid-template-columns: 1fr 1.2fr; }
+.dining-feature-2 .dining-feature-image { grid-column: 2; grid-row: 1; }
+.dining-feature-2 .dining-feature-copy { grid-column: 1; grid-row: 1; }
+.dining-feature-3 .dining-feature-image { width: 85%; aspect-ratio: 1; }
+/* Add only the small gap: html already reserves space for the sticky header. */
+.dining-directory-page { padding-top: 40px; scroll-margin-top: 10px; }
+.dining-directory-page .section-topline { border-top: 1px solid var(--line); padding-top: 24px; }
+.dining-directory-page h2 { margin-bottom: 36px; }
+.dining-result-bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-block: 1px solid var(--line); padding: 18px 0; }
+.dining-result-bar p { color: var(--accent); }
+.dining-directory-page .directory-empty h3 { font-size: clamp(30px, 4vw, 56px); font-weight: 400; letter-spacing: -.04em; }
+.dining-venue-page { padding: 130px var(--gutter) 90px; }
+.dining-detail-hero { height: min(68vw, 670px); min-height: 400px; }
+.dining-detail-hero img { object-position: center 48%; }
+.dining-detail-practical { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12vw; margin-top: 55px; }
+.dining-detail-description { max-width: 630px; font-size: clamp(28px, 3vw, 48px); letter-spacing: -.035em; line-height: 1.25; margin-bottom: 50px; overflow-wrap: anywhere; }
+.dining-detail .store-detail-heading h1 { font-size: clamp(64px, 9vw, 155px); }
+
+@media (max-width: 1100px) {
+  .dining-page { padding-top: 85px; }
+  .dining-page-hero { min-height: 590px; }
+  .dining-hero-content h1 { font-size: 13vw; }
+  .dining-page-intro, .dining-directory-page { padding-block: 70px; }
+  .dining-feature { gap: 5vw; }
+  .dining-intro-layout { gap: 5vw; }
+}
+@media (max-width: 700px) {
+  .dining-page { padding-top: 78px; }
+  .dining-page-hero { height: 79svh; min-height: 530px; max-height: 760px; }
+  .dining-page-hero > img { object-position: 65% center; }
+  .dining-hero-shade { background: linear-gradient(90deg, #14150ec7, #14150e55), linear-gradient(0deg, #14150e66, transparent 60%); }
+  .dining-hero-content { padding-block: 30px; }
+  .dining-hero-content h1 { font-size: 25vw; line-height: .88; padding-block: 34px; }
+  .dining-hero-content h1 span:last-child { font-size: .48em; margin-top: .4em; }
+  .dining-hero-bottom { align-items: flex-start; flex-direction: column; gap: 24px; }
+  .dining-hero-bottom > p { font-size: 14px; }
+  .dining-page-intro, .dining-page-featured, .dining-directory-page { padding: 54px var(--gutter); }
+  .dining-page-intro h2, .dining-directory-page h2 { font-size: 12vw; margin: 28px 0 32px; }
+  .dining-intro-break { display: block; }
+  .dining-intro-layout { display: block; }
+  .dining-intro-large { aspect-ratio: 1.12; }
+  .dining-intro-side { padding-top: 28px; }
+  .dining-intro-side p { font-size: 23px; margin-bottom: 20px; }
+  .dining-intro-small { width: 62%; margin-top: 28px; }
+  .dining-page-featured { padding-top: 0; padding-bottom: 0; }
+  .dining-feature, .dining-feature-2 { display: flex; flex-direction: column; align-items: stretch; gap: 28px; margin-top: 36px; padding-bottom: 36px; }
+  .dining-feature-copy h3 { font-size: 13vw; margin-top: 20px; }
+  .dining-feature-description { font-size: 16px; margin-top: 20px; }
+  .dining-feature-floor { margin: 22px 0; }
+  .dining-feature-2 .dining-feature-image { width: 88%; margin-left: auto; aspect-ratio: .95; }
+  .dining-feature-3 .dining-feature-image { width: 88%; aspect-ratio: .95; }
+  .dining-directory-page { scroll-margin-top: 16px; }
+  .dining-directory-page .directory-search { margin-top: 24px; }
+  .dining-result-bar { gap: 12px; }
+  .dining-result-bar .eyebrow { font-size: 9px; }
+  .dining-venue-page { padding-top: 108px; padding-bottom: 54px; }
+  .dining-detail .store-detail-heading h1 { font-size: 16vw; }
+  .dining-detail-hero { height: 106vw; min-height: 300px; max-height: 530px; }
+  .dining-detail-practical { display: block; margin-top: 30px; }
+  .dining-detail-description { font-size: 28px; margin-bottom: 24px; }
+  .dining-detail-practical > div:first-child { margin-bottom: 35px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dining-photo img { transition: none; }
+  .dining-feature-image:hover img { transform: none; }
+}
