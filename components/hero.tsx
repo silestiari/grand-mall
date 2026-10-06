@@ -10,11 +10,11 @@ export function Hero() {
     const heroCopy = useTranslations("homepageHero");
     const headlineLines = heroCopy.raw("lines") as string[];
     const reduce = useReducedMotion();
-    return (<section className="hero" aria-labelledby="hero-title">
+    return (<section className="hero hero-facade" aria-labelledby="hero-title">
       <div className="hero-image">
         {homepageMedia.hero.kind === "video" ? (<video autoPlay={!reduce} muted loop playsInline poster={homepageMedia.hero.poster} aria-hidden="true">
             <source src={homepageMedia.hero.src}/>
-          </video>) : (<Image src={homepageMedia.hero.src} alt={t("")} fill preload sizes="100vw"/>)}
+          </video>) : (<Image src={homepageMedia.hero.src} alt={t(homepageMedia.hero.alt)} fill preload sizes="(max-width: 1000px) 100vw, 55vw"/>)}
       </div>
       <div className="hero-shade"/>
       <div className="hero-content">
