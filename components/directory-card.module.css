@@ -7,6 +7,7 @@
   padding: 0;
 }
 .grid > li { min-width: 0; }
+.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .card {
   --card-color: #153f35;
   --card-glow: #b4cdbb;
@@ -19,6 +20,10 @@
   transition: transform .4s, box-shadow .4s, border-color .4s;
 }
 .dining { --card-color: #493326; --card-glow: #d8b58b; }
+.leisure { --card-color: #173740; --card-glow: #a4cbd1; background: #142b30; border-color: #ffffff22; }
+.leisure .copy { color: #eeeae0; }
+.leisure .copy p { color: #afc4bf; }
+.leisure .arrow { border-color: #ffffff40; }
 .visual {
   position: relative;
   isolation: isolate;
@@ -33,6 +38,7 @@
   background: linear-gradient(180deg, transparent 35%, #112d2940 65%, #112d29d9 100%);
 }
 .dining .wash { background: linear-gradient(180deg, transparent 35%, #49332640 65%, #38291fdf 100%); }
+.leisure .wash { background: linear-gradient(180deg, transparent 35%, #17374040 65%, #102b35e6 100%); }
 .category { position: absolute; bottom: 20px; left: 24px; right: 24px; color: #fff; font-size: 12px; line-height: 1.5; }
 .monogram { position: absolute; inset: 0; display: grid; place-items: center; color: #fff9; font-size: clamp(80px, 9vw, 140px); font-weight: 400; }
 .copy { position: relative; padding: 24px 80px 26px 24px; color: #16372e; }
@@ -47,7 +53,7 @@
 }
 @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } }
 @media (max-width: 700px) {
-  .grid { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 24px; }
+  .grid, .pair { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 24px; }
   .visual { aspect-ratio: 1.55; }
   .copy h3 { font-size: 28px; }
   .monogram { font-size: 110px; }

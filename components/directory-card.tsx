@@ -12,20 +12,21 @@ type DirectoryCardProps = {
   category: string;
   floor?: string;
   image?: { src: string; alt: string };
-  tone: "retail" | "dining";
+  tone: "retail" | "dining" | "leisure";
+  sizes?: string;
 };
 
-export function DirectoryCardList({ children }: { children: ReactNode }) {
-  return <ul className={styles.grid}>{children}</ul>;
+export function DirectoryCardList({ children, columns = 3 }: { children: ReactNode; columns?: 2 | 3 }) {
+  return <ul className={`${styles.grid} ${columns === 2 ? styles.pair : ""}`}>{children}</ul>;
 }
 
-export function DirectoryCard({ name, href, category, floor, image, tone }: DirectoryCardProps) {
+export function DirectoryCard({ name, href, category, floor, image, tone, sizes = "(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 30vw" }: DirectoryCardProps) {
   const t = useCopy();
   return (
     <li>
-      <Link href={href} prefetch={false} className={`${styles.card} ${styles[tone]}`}>
+      <Link href={href} prefetch={false} className={`${styles.card} ${styles[tone] ?? ""}`}>
         <div className={styles.visual}>
-          {image ? <Image src={image.src} alt={t(image.alt)} fill sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 30vw" />
+          {image ? <Image src={image.src} alt={t(image.alt)} fill sizes={sizes} />
             : <span className={styles.monogram} aria-hidden="true">{name.slice(0, 1)}</span>}
           <span className={styles.wash} aria-hidden="true" />
           <span className={styles.category}>{category}</span>

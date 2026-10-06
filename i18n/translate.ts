@@ -11,9 +11,9 @@ export function createCopy(locale: string, messages: CopyMessages) {
   const copy = (source: string, values?: Record<string, string | number>) => {
     const decoded = source.replace(/&apos;/g, "'").replace(/&amp;/g, "&");
     let value = locale === "en" ? decoded : messages.copy[copyKey(source)] ?? decoded.trim();
+    if (values) value = value.replace(/\{(\w+)\}/g, (match, key) => String(values[key] ?? match));
     const casing = decoded.replace(/\{\w+\}/g, "").trim();
     if (locale !== "en" && /[A-Z]/.test(casing) && casing === casing.toUpperCase()) value = value.toLocaleUpperCase(locale);
-    if (values) value = value.replace(/\{(\w+)\}/g, (match, key) => String(values[key] ?? match));
     return (locale !== "en" && /^\s/.test(decoded) ? " " : "") + value + (locale !== "en" && /\s$/.test(decoded) ? " " : "");
   };
   const count = (kind: "store" | "place", quantity: number) => {
