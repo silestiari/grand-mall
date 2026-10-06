@@ -55,7 +55,7 @@ export default function VisitPage() {
           <Link className="experience-link" href={info.phoneHref}>{t("ASK ABOUT PARKING ")}{arrow}</Link>
         </section>
         <section aria-labelledby="visit-accessibility-title"><Reveal><p className="eyebrow">{t("04 / A VISIT FOR EVERYONE")}</p><h2 id="visit-accessibility-title">{t("ACCESSIBILITY")}<span className="accent">.</span></h2></Reveal>
-          <ul className="visit-access-list">{Object.entries(info.accessibility ?? {}).map(([key, value]) => value && <li key={key}><span aria-hidden="true">+</span>{value}</li>)}</ul>
+          <ul className="visit-access-list">{Object.entries(info.accessibility ?? {}).map(([key, value]) => value && <li key={key}><span aria-hidden="true">+</span>{t(value)}</li>)}</ul>
           <p className="visit-small-copy">{t("For help planning your arrival or finding an entrance, contact our information team.")}</p><Link className="experience-link" href={info.phoneHref}>{t("ASK OUR TEAM ")}{arrow}</Link>
         </section>
       </div>
