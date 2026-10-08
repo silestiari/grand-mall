@@ -1,6 +1,8 @@
 ﻿# Grand Mall Batumi
 
-**English QA portfolio case study:** [Grand Mall QA Case Study](docs/portfolio-qa-case-study.md).\n\nФинальная проверка перед публикацией: [отчёт от 6 октября 2026 года](docs/prelaunch-qa-final.md). Этот отчёт содержит актуальные результаты и ограничения; более ранние проверки ниже описывают этапы разработки.
+**English QA portfolio case study:** [Grand Mall QA Case Study](docs/portfolio-qa-case-study.md).
+
+Финальная проверка перед публикацией: [отчёт от 6 октября 2026 года](docs/prelaunch-qa-final.md). Этот отчёт содержит актуальные результаты и ограничения; более ранние проверки ниже описывают этапы разработки.
 
 ## Языки сайта
 
