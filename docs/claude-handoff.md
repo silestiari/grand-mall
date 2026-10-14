@@ -1,0 +1,169 @@
+# Claude Code handoff — Grand Mall Batumi
+
+Онбординг-аудит от 14 октября 2026 года. Проект передан от Codex. Здесь собраны только проверенные в этот день факты. Более ранние QA-отчёты в `docs/` описывают историю и не являются свежим доказательством.
+
+## Состояние репозитория
+
+- Локальный `main` был на 17 коммитов позади `origin/main` (`872809a` против `9cba329`), локальных изменений не было. Выполнен `git merge --ff-only origin/main`, сейчас `main` = `origin/main` = `9cba329`.
+- Версии по `npm ls`:
+  - next 16.3.8, react / react-dom 19.2.8, next-intl 4.14.9, framer-motion 14.0.0;
+  - tailwindcss 4.3.3, eslint 9.39.5;
+  - typescript 6.0.2 (API) + 7.0.2 (`tsc`);
+  - Node 24.21.0, npm 11.19.0, Claude Code 2.1.292.
+- Не в git: `.serena/` (данные Serena MCP пользователя), `grand-mall.zip.zip` (207 MB, в `.gitignore`), `.verification/` (скриншоты и отчёты, в `.gitignore`).
+
+## Свежий baseline (14.10.2026)
+
+| Проверка | Результат |
+| --- | --- |
+| `npm run lint` | exit 0, без сообщений |
+| `npm run typecheck` | exit 0 |
+| `npm run build` | exit 0, 326 статических страниц, предупреждений нет |
+| Консоль `/en` (prod) | 0 ошибок, 4 предупреждения «preloaded but not used» (лишние preload шрифтов) |
+
+Lighthouse 12, локальный prod (`next start`), лабораторные данные, не полевые:
+
+| URL | Score | FCP | LCP | TBT | CLS |
+| --- | --- | --- | --- | --- | --- |
+| /en mobile | 85 | 1.4 s | 4.3 s | 30 ms | 0 |
+| /en desktop | 99 | 0.3 s | 0.8 s | 0 ms | 0 |
+| /ru/stores mobile | 89 | 1.2 s | 3.7 s | 30 ms | 0 |
+
+Основную часть LCP на mobile занимает render delay: 2.75 s на /en и 3.26 s на /ru/stores. JSON-отчёты Lighthouse лежат в `.verification/claude-onboarding/perf/`.
+
+## Проверенные факты о проекте
+
+- Маршруты `app/[locale]/…`:
+  - разделы: home, stores, dining, entertainment, map, visit, events, offers;
+  - detail-страницы: `stores/[slug]`, `dining/[slug]`, `entertainment/[slug]`, `events/[slug]`;
+  - локализованные 404: `[...rest]` и `not-found.tsx`.
+- Локали `en`, `ru`, `ka`. `/` отвечает 307 на `/en`. Конфигурация: `proxy.ts` (next-intl middleware), `i18n/routing.ts`.
+- Переводы:
+  - словари `messages/*.json` содержат по 522 ключа, паритет полный;
+  - текст интерфейса переводится по FNV-хэшу английского исходника (`i18n/translate.ts`); если ключа нет, без предупреждения показывается английский;
+  - из 407 литеральных вызовов `copy()`/`t()` без перевода только бренд «Wonderland», и это намеренно.
+- Данные:
+  - 80 магазинов, 15 ресторанов, 4 развлечения; у каждой записи есть `source`, дублей slug нет;
+  - Events и Offers пусты, публикация только при `verified` + `source`;
+  - `verifiedMapPositions` пуст, карта иллюстративная, дисклеймер есть на всех трёх языках.
+- Изображения:
+  - происхождение описано в `docs/official-media.json`, `public/images/*/SOURCES.md` и `public/images/*-ASSETS.md`;
+  - фасад в hero — архитектурный рендер, а не фотография.
+- SEO:
+  - canonical, hreflang (en/ru/ka/x-default), OG и Twitter локализованы;
+  - origin по умолчанию `https://grand-mall-three.vercel.app` (`lib/site-url.ts`), совпадает с опубликованным сайтом;
+  - sitemap: 321 URL, все отвечают 200; `robots.txt`: Allow all + sitemap;
+  - 404 отдаёт HTTP 404 + `noindex`.
+- Тема: светлая/тёмная **не реализована**, есть только светлая. Цветовых токенов 6 (`globals.css:104-110`), остальное захардкожено: около 300 hex-вхождений, около 200 уникальных значений.
+- Тестов нет: в `package.json` нет скрипта `test`, spec-файлов нет.
+
+### Подтверждено, работает
+
+- Hero: надпись «GRAND MALL» не перекрыта на 1440, 768 и 390 px.
+- Skip-link: первый элемент по Tab, видим при фокусе, переносит фокус на `<main>`.
+- Поиск в шапке: нативный `<dialog>`, фокус и Escape работают, счётчик результатов в `role=status`.
+- Мобильное меню.
+- Фильтры `/stores`: `aria-pressed`, счётчик, сброс.
+- Карта: этажи, deep link `?type=store&slug=zara`, browser Back.
+- Переключение языка сохраняет path, query и hash.
+- 404 локализован, recovery-ссылки работают.
+- reduced motion: контент виден, анимации сокращены.
+
+## Приоритетный бэклог
+
+Ниже объединены находки 6 аудитов. Каждый пункт перепроверен ведущим, если не указано иное.
+
+### P1
+
+1. **Горизонтальный скролл на главной при ширине до ~1000px, во всех локалях.**
+   - Измерено: на `/ka` при 390 px `scrollWidth` 399 против 375.
+   - Источник: `.destination-card` в `app/i18n.css:144-205`, `min-height` вместе с `aspect-ratio` раздувает ширину.
+   - Регрессия появилась в коммитах после QA 6 октября.
+2. **h2 обрезаются на 320–390 px (KA, на 320 px и RU).**
+   - Примеры: «ᲨᲝᲞᲘᲜᲒᲘ» 341>331, «ᲒᲐᲠᲗᲝᲑᲐ» 342>330.
+   - Причина: мтаврули через `toLocaleUpperCase("ka")` шире исходного начертания.
+3. **На `/map` нет h1 и контента в серверном HTML.**
+   - В HTML только `BAILOUT_TO_CLIENT_SIDE_RENDERING`.
+   - Источник: `useSearchParams()` в `components/map-explorer.tsx` внутри `<Suspense>` в `app/[locale]/map/page.tsx`.
+4. **Категории брендов на главной расходятся с каталогом.**
+   - `lib/mall-data.ts:48,50`: Samsonite «Accessories» против «Shoes & Bags», MINISO «Home» против «Kids».
+   - Брать категории из `data/stores.ts`.
+5. **Обводка фокуса обрезается у фильтров категорий** на `/stores` и `/dining` (`.directory-categories`: `overflow-x:auto` + `outline-offset: 6px`, `app/globals.css`).
+6. **Контраст `.visit-location-top`:** 3.69:1 при 10 px (`app/globals.css:183`, блок Visit на главной).
+7. **Лишние шрифты на каждой странице.**
+   - `Geist_Mono` не используется.
+   - Noto Sans (cyrillic/latin) и Noto Sans Georgian предзагружаются на всех локалях: около 119 KB конкурирующих запросов и 4 предупреждения в консоли.
+   - Файл: `app/[locale]/layout.tsx`. Ожидаемое снижение LCP render delay надо подтвердить повторным Lighthouse.
+8. **Мелкие кегли:** 34 объявления `font-size` 8–9 px (`globals.css`, `map.css`, `dining.css`, `entertainment.css`). Eyebrow-подписи и строка фактов плохо читаются на 390 px.
+9. **Нет регрессионных тестов.** См. план ниже.
+
+### P2
+
+10. Одинаковое meta description у 228 из 321 URL: магазины без `shortDescription`, fallback в `i18n/metadata.ts:7`. Собирать описание из проверенных полей: название, категория, этаж.
+11. Страница 404 наследует title и canonical главной (`app/[locale]/layout.tsx:15`). При этом `noindex` и статус 404 корректны.
+12. Нет JSON-LD. Допустим только `ShoppingCenter` с адресом и телефоном из `data/visitor-info.ts`, без `openingHours`: часы 10:00–22:00 относятся к инфостойке.
+13. «Find store locations on the **live** mall map» (`lib/homepage-content.ts:50-53`) обещает больше, чем даёт иллюстративная карта.
+14. Adidas открывается по `/stores/giordano`. Источник действительно отдаёт `seo_url: "giordano"` для id=19, то есть данные перенесены точно. **Нужно решение владельца:** ввести локальный slug `adidas` и 308-редирект со старого адреса.
+15. Фильтр этажей `/stores` предлагает −1 и 4, а у всех 80 магазинов этажи 1–3 (`data/stores.ts:6`). README описывает это как намеренное решение.
+16. Состояние фильтров не хранится в URL: после «Назад» с карточки фильтр сброшен. Каталоги ищут только по имени, а поиск в шапке ещё и по категории. Функция `normalise` продублирована.
+17. CSS:
+    - `dining.css`, `entertainment.css`, `map.css` подключены в `globals.css` через `@import` и грузятся на всех страницах;
+    - на hero нет `fetchPriority="high"`;
+    - `hero.tsx` клиентский только ради анимации h1.
+18. Визуальные доработки без редизайна:
+    - смягчить `.destination-wash`;
+    - выровнять радиусы и aspect-ratio карточек;
+    - успокоить яркий градиент заглушек каталога;
+    - выровнять вертикальный ритм секций;
+    - на 768 px сблизить кнопки hero с подзаголовком.
+19. «Ask about parking» и «Ask our team» на `/visit` ведут на тот же `tel:`, что и «Call».
+20. Ссылки «→» в списке `/map` без собственного текста. Есть `aria-label`, нужно проверить скринридером.
+21. Подпись языка «GE» вместо «KA», в футере «ქართული». Это решение владельца, сейчас не баг.
+22. 4 JPG без ссылок в коде, около 1.5 MB: `architecture-hero.jpg`, `mall-atrium.jpg`, `lifestyle-architecture.jpg`, `lifestyle-table.jpg`. Для `architecture-hero.jpg` нет записи о происхождении.
+23. Мёртвый код: `officialMall` (`lib/experience-data.ts:17`), `visitorSources` (`data/visitor-info.ts:39`, возможно, оставлен для provenance). Одноимённые `diningVenues`/`entertainmentVenues` в `lib/` и `data/` — риск рассинхрона.
+24. README местами устарел: например, «public/images — временные материалы», хотя часть изображений уже официальные.
+
+### Предложение по теме (не реализовано)
+
+1. Ввести семантические токены: поверхности, текст, линия, акцент, пара градиента панелей.
+2. Заменить ими самые частые hex: `#f9f7f1`, `#e7eee2`, `#153f35`, `#2e6151`, `#183e361a`.
+3. Переопределить токены в `:root[data-theme=dark]` и `prefers-color-scheme`.
+4. Затемнения hero и фото оставить как есть.
+5. Отдельно проверить контраст акцента `#175e59` на тёмном фоне.
+
+Шаги 1–2 полезны и без тёмной темы. Сама тема — отдельное решение владельца.
+
+### Минимальный набор регрессионных тестов (Playwright, 6–7 сценариев)
+
+1. Смена языка на detail-странице и на `/map?type=store&slug=zara` сохраняет path, query, hash и `html[lang]`.
+2. Без браузера: каждая строка из `data/` и `lib/`, передаваемая в `t()`, имеет ключ в ru и ka.
+3. `/stores`: поиск, категория + этаж, счётчик, сброс, пустое состояние.
+4. Поиск в шапке: открытие, запрос, Escape, возврат фокуса (в том числе из мобильного меню).
+5. `/map`: deep link, этаж, переход к деталям и «Назад».
+6. Отсутствие горизонтального overflow на 320, 390 и 768 px для `/ka`, `/ru`, `/ru/stores`, `/ka/map`.
+7. `/ru/unknown`: статус 404, локализация, recovery-ссылки.
+
+## Инструменты и агенты
+
+### Субагенты
+
+- Установлены в `.claude/agents/`, источник — VoltAgent/awesome-claude-code-subagents@`408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e`:
+  - ui-designer, nextjs-developer, ui-ux-tester, performance-engineer;
+  - accessibility-tester, seo-specialist, test-automator, code-reviewer.
+- В каждый файл добавлен блок project rules: русский язык, EN/RU/KA, CLAUDE.md/AGENTS.md, только проверенные данные, без редизайна. Также добавлено пояснение, что агента `context-manager` в проекте нет.
+- Изменения во frontmatter:
+  - у ui-ux-tester, accessibility-tester и performance-engineer убрано ограничение `tools`: в источнике были несуществующие `chrome-mcp`/`computer-use`, теперь агенты наследуют браузерные MCP;
+  - seo-specialist получил `Bash` для `curl`.
+- Проверка: новая сессия `claude -p` видит все 8 типов. В текущей сессии они подхватились без перезапуска.
+
+### Плагины и MCP (`claude mcp list`, 14.10.2026)
+
+| Инструмент | Статус |
+| --- | --- |
+| frontend-design | установлен (local), включён |
+| chrome-devtools-mcp 1.9.0 | установлен (local), MCP Connected. Инструменты доступны с новой сессии |
+| context7 | установлен (local), MCP **Needs authentication**: войти через `/mcp` |
+| playwright | уже был (синхронизирован с claude.ai), Connected, работает. Отдельно в local не ставился, чтобы не дублировать MCP-сервер |
+| Marketplace `claude-plugins-official` | уже был добавлен |
+
+Playwright MCP — один общий браузер, поэтому одновременно им может управлять только один агент. Артефакты Playwright пишутся в `.playwright-mcp/` (добавлено в `.gitignore`).
