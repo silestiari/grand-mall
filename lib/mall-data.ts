@@ -45,9 +45,9 @@ export const stores: { name: string; category: Category; slug: string }[] = [
   { name: "CHARLES & KEITH", category: "Shoes & Bags", slug: "charles-keith" },
   { name: "ALDO", category: "Shoes & Bags", slug: "aldo" },
   { name: "PANDORA", category: "Accessories", slug: "pandora" },
-  { name: "Samsonite", category: "Accessories", slug: "samsonite" },
+  { name: "Samsonite", category: "Shoes & Bags", slug: "samsonite" },
   { name: "English Home", category: "Home", slug: "english-home" },
-  { name: "MINISO", category: "Home", slug: "miniso" },
+  { name: "MINISO", category: "Kids", slug: "miniso" },
   { name: "Zoommer", category: "Electronics", slug: "zoomer" },
   { name: "iTechnics", category: "Electronics", slug: "itechnics" },
 ];

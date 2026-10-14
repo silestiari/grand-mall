@@ -47,10 +47,10 @@ export const visitorInformation = { ...visitorData, fields: visitorFields };
 // Parking on the minus level is confirmed by the official about/services pages.
 export const mallLevels = [
   { id: "-1", title: "Parking", description: [visitorData.parking?.spaces ? `${visitorData.parking.spaces} spaces` : undefined, visitorData.parking?.hours ? `Daily ${visitorData.parking.hours}` : undefined].filter(Boolean).join(" · ") },
-  { id: "1", title: "Retail level", description: "Find store locations on the live mall map." },
-  { id: "2", title: "Retail level", description: "Find store locations on the live mall map." },
-  { id: "3", title: "Retail level", description: "Find store locations on the live mall map." },
-  { id: "4", title: "Retail level", description: "Find store locations on the live mall map." },
+  { id: "1", title: "Retail level", description: "Find your next stop in the Grand Mall directory." },
+  { id: "2", title: "Retail level", description: "Find your next stop in the Grand Mall directory." },
+  { id: "3", title: "Retail level", description: "Find your next stop in the Grand Mall directory." },
+  { id: "4", title: "Retail level", description: "Find your next stop in the Grand Mall directory." },
 ];
 
 export const socialImages = [
