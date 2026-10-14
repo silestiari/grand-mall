@@ -138,6 +138,7 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
 .hero-facade .button { min-height: 50px; gap: 24px; }
 .hero-facade .button-light { background: #eeeae0; border-radius: 2px; }
 .hero.hero-facade .hero-visit { color: #e5e9df; border-bottom-color: #ffffff45; }
+.hero.hero-facade .hero-visit:focus-visible { outline-color: #cae6dd; }
 .hero-facade .hero-bottom {
   position: relative; left: auto; right: auto; bottom: auto;
   margin: 0 var(--gutter); padding: 20px 0 24px; border-top: 1px solid #ffffff24;

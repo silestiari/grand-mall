@@ -480,7 +480,7 @@ input:focus-visible {
 .languages a:hover { color: #cae6dd; }
 .header-scrolled .languages a:hover, .mobile-menu .languages a:hover { color: var(--accent); }
 .header:not(.header-scrolled) a:focus-visible, .header:not(.header-scrolled) button:focus-visible,
-.hero a:focus-visible, .site-footer a:focus-visible, .entertainment a:focus-visible { outline-color: #cae6dd; }
+.hero a:focus-visible, .site-footer a:focus-visible, .entertainment-section a:focus-visible { outline-color: #cae6dd; }
 .languages button:disabled {
   opacity: 0.6;
 }
