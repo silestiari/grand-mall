@@ -58,6 +58,13 @@ html[lang="ka"] .ent-hero h1 {
   max-width: 13ch;
   line-height: 1.08;
 }
+/* Mtavruli capitals are wider than the default 13vw allows for this single long word. */
+html[lang="ka"] .batumi-content h2 { font-size: clamp(70px, 12.4vw, 240px); }
+html[lang="ka"] .visit-arrival h2 { font-size: clamp(28px, 3.7vw, 60px); }
+@media (max-width: 420px) {
+  html[lang="ru"] .visit-transport-list h3 { font-size: 22px; }
+  html[lang="ka"] .visit-transport-list h3 { font-size: 19px; }
+}
 @media (max-width: 1100px) {
   html:is([lang="ru"], [lang="ka"]) .hero { min-height: max(680px, 100svh); }
   html[lang="ru"] .hero h1 { font-size: clamp(60px, 10.4vw, 120px); }
@@ -73,17 +80,20 @@ html[lang="ka"] .ent-hero h1 {
   html[lang="ka"] .hero h1 { font-size: clamp(38px, 13.2vw, 92px); }
   html:is([lang="ru"], [lang="ka"]) .hero h1 > span:first-child { font-size: 1.3em; }
   html[lang="ru"] .day-shop .day-title,
-  html[lang="ka"] .day-shop .day-title { font-size: 20vw; }
-  html[lang="ka"] .day-play .day-title { font-size: 18vw; }
+  html[lang="ka"] .day-shop .day-title { font-size: 18.5vw; }
+  html[lang="ru"] .day-play .day-title { font-size: 25vw; }
+  html[lang="ka"] .day-play .day-title { font-size: 16.5vw; }
+  html:is([lang="ru"], [lang="ka"]) .brands h2 { font-size: clamp(36px, 11.2vw, 74px); }
   html[lang="ru"] .dining-hero-content h1 { font-size: 14vw; }
   html[lang="ka"] .dining-hero-content h1 { font-size: 14vw; }
-  html[lang="ka"] :is(.dining-page-intro, .dining-directory-page) h2 { font-size: 10.5vw; }
+  html[lang="ka"] :is(.dining-page-intro, .dining-directory-page) h2 { font-size: 9.5vw; }
+  html:is([lang="ru"], [lang="ka"]) .journal-hero h1 { font-size: clamp(32px, 11.5vw, 80px); }
   html[lang="ka"] .ent-quick-nav h2 { font-size: 10.5vw; }
   html[lang="ka"] .visit-page h2 { font-size: 8.5vw; }
   html[lang="ka"] .offer-story { min-width: 0; }
   html[lang="ka"] .story-meta { flex-wrap: wrap; gap: 10px; }
   html[lang="ka"] .offer-story h3 { overflow-wrap: anywhere; }
-  html[lang="ka"] .batumi-content h2 { font-size: 12vw; }
+  html[lang="ka"] .batumi-content h2 { font-size: 11vw; }
   html[lang="ru"] .visit-page h1 { font-size: 10vw; }
   html[lang="ru"] .ent-hero h1 { font-size: clamp(36px, 12.5vw, 88px); }
   html[lang="ka"] .ent-hero h1 { font-size: clamp(36px, 13vw, 92px); }
@@ -143,7 +153,8 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
 }
 .destination-card {
   position: relative; isolation: isolate; display: flex; align-items: flex-end;
-  min-height: 350px; aspect-ratio: 1.1; padding: 28px; color: #fff;
+  /* Explicit width stops min-height + aspect-ratio from widening the card past its column. */
+  width: 100%; min-height: 350px; aspect-ratio: 1.1; padding: 28px; color: #fff;
   border-radius: 6px; overflow: hidden; background: #183e36;
   box-shadow: 0 8px 24px #183e360c; transition: box-shadow .45s, transform .45s;
 }
