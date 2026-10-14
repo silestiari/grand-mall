@@ -15,8 +15,8 @@ export function Brands() {
     return (<section className="brands section-padding" id="brands" aria-labelledby="brands-title">
       <Reveal>
         <div className="section-topline">
-          <p className="eyebrow">{t("FIND YOUR FAVOURITES")}</p>
-          <span className="eyebrow">{t("STYLE, IN EVERY DIRECTION")}</span>
+          <p className="eyebrow">{t("Find your favourites")}</p>
+          <span className="eyebrow">{t("Style, in every direction")}</span>
         </div>
         <div className="brands-intro">
           <h2 id="brands-title">{t("DISCOVER")}<br />{t("THE BRANDS")}<span className="accent">.</span>
@@ -43,7 +43,7 @@ export function Brands() {
             <div className="brand-selection-label">
               <span className="eyebrow">
                 {category === "All"
-        ? t("A FEW FAMILIAR NAMES") : t(category.toUpperCase())}
+        ? t("A few familiar names") : t(category.toUpperCase())}
               </span>
               <Link className="brand-selection-link" href="/stores" aria-label={t("View all stores")}>
                 <span aria-hidden="true">↗</span>
@@ -60,7 +60,7 @@ export function Brands() {
             </div>
             <div className="brand-selection-bottom">
               <p>{t("Find something that feels like you.")}</p>
-              <Link className="text-link" href="/stores">{t("EXPLORE ALL STORES")}<span aria-hidden="true">→</span>
+              <Link className="text-link" href="/stores">{t("Explore all stores")}<span aria-hidden="true">→</span>
               </Link>
               <span className="selection-note">{t("A curated introduction to our stores.")}</span>
             </div>

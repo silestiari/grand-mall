@@ -9,8 +9,8 @@ export function Entertainment() {
     return (<section id="entertainment" className="entertainment-section section-padding" aria-labelledby="entertainment-title">
       <Reveal>
         <div className="section-topline">
-          <p className="eyebrow">{t("CHANGE THE PACE")}</p>
-          <span className="eyebrow">{t("MAKE ROOM FOR SOMETHING ELSE")}</span>
+          <p className="eyebrow">{t("Change the pace")}</p>
+          <span className="eyebrow">{t("Make room for something else")}</span>
         </div>
         <div className="entertainment-intro">
           <h2 id="entertainment-title">{t("THE FUN")}<br />{t("STARTS HERE")}<span>.</span></h2>
@@ -33,13 +33,13 @@ export function Entertainment() {
           <ImmersiveImage {...experienceMedia.wonderland} className="family-image" sizes="(max-width: 700px) 75vh, 58vw"/>
           <div className="family-content">
             <Reveal className="family-heading">
-              <p className="eyebrow">{t("KIDS ENTERTAINMENT")}</p>
+              <p className="eyebrow">{t("Kids entertainment")}</p>
               <h3 id="family-title">{t("Wonderland")}</h3>
             </Reveal>
             <Reveal className="family-copy">
               <p className="family-venue">{t("Little explorers. Big days.")}</p>
               <p className="experience-description">{t("A place for play, imagination and time together.")}</p>
-              <Link className="experience-link" href="/entertainment/wonderland">{t("EXPLORE WONDERLAND ")}<span aria-hidden="true">↗</span></Link>
+              <Link className="experience-link" href="/entertainment/wonderland">{t("Explore Wonderland ")}<span aria-hidden="true">↗</span></Link>
             </Reveal>
           </div>
         </article>

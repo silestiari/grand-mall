@@ -11,7 +11,7 @@ export function LanguageSelector({ footer = false }: { footer?: boolean }) {
   const locale = useLocale(), pathname = usePathname(), t = useCopy();
   const suffix = useSyncExternalStore(subscribe, snapshot, () => "");
   return <nav className={footer ? "footer-languages" : "languages"} aria-label={t(footer ? "Website language" : "Header language")}>
-    {footer && <h2 className="eyebrow">{t("LANGUAGE")}</h2>}
+    {footer && <h2 className="eyebrow">{t("Language")}</h2>}
     {languages.map((language, index) => {
       const label = footer ? language.name : language.label;
       const link = <a href={localeHref(pathname, language.locale) + suffix} lang={language.locale} hrefLang={language.locale} aria-current={locale === language.locale ? "true" : undefined} className={locale === language.locale ? "current" : undefined} aria-label={t("Switch language to {value0}", { value0: language.name })}>{label}</a>;

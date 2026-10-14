@@ -14,7 +14,7 @@ export function Events() {
     const dateLabel = (date: string) => new Intl.DateTimeFormat(t.locale, { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Tbilisi" }).format(new Date(date));
     return (<section id="events" className="events-section section-padding" aria-labelledby="events-title">
       <Reveal>
-        <div className="section-topline"><p className="eyebrow">{t("THE EVERYDAY & THE UNEXPECTED")}</p><span className="eyebrow">{t("GRAND MALL JOURNAL")}</span></div>
+        <div className="section-topline"><p className="eyebrow">{t("The everyday & the unexpected")}</p><span className="eyebrow">{t("Grand Mall journal")}</span></div>
         <div className="finish-heading-row"><h2 id="events-title" className="finish-title">{t("WHAT\u2019S")}<br />{t("HAPPENING")}<span className="accent">.</span></h2><p>{t("New perspectives.")}<br />{t("More reasons to come together.")}</p></div>
       </Reveal>
       <div className="events-editorial">
@@ -32,6 +32,6 @@ export function Events() {
           </Reveal>)}
         </div>
       </div>
-      <Link className="experience-link finish-end-link" href="/events">{t("VIEW ALL EVENTS ")}<span aria-hidden="true">→</span></Link>
+      <Link className="experience-link finish-end-link" href="/events">{t("View all events ")}<span aria-hidden="true">→</span></Link>
     </section>);
 }

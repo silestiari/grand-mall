@@ -35,9 +35,9 @@ export function Hero() {
         </div>
       </div>
       <div className="hero-bottom">
-        <Link className="eyebrow scroll-link" href="#numbers">{t("SCROLL TO DISCOVER")}<span aria-hidden="true">↓</span>
+        <Link className="eyebrow scroll-link" href="#numbers">{t("Scroll to discover")}<span aria-hidden="true">↓</span>
         </Link>
-        <span className="eyebrow hero-location">{t("BATUMI, GEORGIA \u00B7 BLACK SEA COAST")}</span>
+        <span className="eyebrow hero-location">{t("Batumi, Georgia \u00b7 Black Sea coast")}</span>
       </div>
     </section>);
 }

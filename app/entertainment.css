@@ -91,7 +91,7 @@
   .ent-hero > img { object-position: 64% center; }
   .ent-hero-bottom { flex-direction: column; align-items: flex-start; gap: 25px; }
   .ent-hero-bottom > p { font-size: 14px; }
-  .ent-hero-bottom .experience-link { font-size: 10px; }
+  .ent-hero-bottom .experience-link { font-size: 12px; }
   .ent-intro { padding: 50px var(--gutter); scroll-margin-top: 16px; }
   .ent-intro-layout { display: block; margin-top: 28px; }
   .ent-intro h2 { font-size: 12.3vw; }
@@ -127,7 +127,7 @@
   .ent-detail-description { font-size: 28px; margin-bottom: 25px; }
   .ent-detail-information { margin-top: 35px; }
   .ent-detail-information dl > div { display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 14px; }
-  .ent-detail-information dt { margin-bottom: 0; font-size: 10px; }
+  .ent-detail-information dt { margin-bottom: 0; font-size: 12px; }
   .ent-detail-information dd { font-size: 16px; }
 }
 @media (any-hover: hover) {

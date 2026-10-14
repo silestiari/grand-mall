@@ -18,7 +18,7 @@ export function createCopy(locale: string, messages: CopyMessages) {
   };
   const count = (kind: "store" | "place", quantity: number) => {
     const plural = new Intl.PluralRules(locale).select(quantity);
-    return messages.counts[kind][plural === "one" ? 0 : plural === "few" ? 1 : 2].toLocaleUpperCase(locale);
+    return messages.counts[kind][plural === "one" ? 0 : plural === "few" ? 1 : 2];
   };
   return Object.assign(copy, { locale, count });
 }

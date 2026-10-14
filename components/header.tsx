@@ -103,7 +103,7 @@ export function Header({ variant = "hero" }: {
             ✕
           </button>
         </div>
-        <p className="eyebrow menu-eyebrow">{t("YOUR DAY STARTS HERE")}</p>
+        <p className="eyebrow menu-eyebrow">{t("Your day starts here")}</p>
         <nav className="mobile-nav" aria-label={t("Mobile navigation")}>
           <NavItems home={home} onNavigate={() => menu.current?.close()}/>
         </nav>
@@ -125,13 +125,13 @@ export function Header({ variant = "hero" }: {
         }}>
         <div className="search-panel">
           <div className="dialog-top">
-            <span className="eyebrow">{t("GRAND MALL / DISCOVER")}</span>
+            <span className="eyebrow">{t("Grand Mall / discover")}</span>
             <button className="close-button" aria-label={t("Close search")} onClick={() => search.current?.close()}>
               ✕
             </button>
           </div>
           <h2 id="search-title">{t("Find your favourite.")}</h2>
-          <label className="eyebrow" htmlFor="store-search">{t("SEARCH GRAND MALL")}</label>
+          <label className="eyebrow" htmlFor="store-search">{t("Search Grand Mall")}</label>
           <input ref={searchInput} id="store-search" type="search" aria-controls="search-results" aria-describedby="search-help" placeholder={t("A name, a category\u2026")} value={query} onChange={(event) => setQuery(event.target.value)}/>
           <p className="search-status" role="status" aria-atomic="true">{t("Results found: {value0}", { value0: results.length })}</p>
           <div className="search-results" id="search-results">
@@ -141,7 +141,7 @@ export function Header({ variant = "hero" }: {
                   <span>{place.name}</span>
                   <small>{t(place.group)} / {t(place.category)}{place.floor ? t(" / Floor {value0}", { value0: place.floor }) : ""}</small>
                   <span aria-hidden="true">↗</span>
-                </Link>))) : (<div className="search-empty"><p>{t("No places found. Try another name or category.")}</p><button className="experience-link" onClick={() => { setQuery(""); searchInput.current?.focus(); }}>{t("CLEAR SEARCH ")}<span aria-hidden="true">→</span></button></div>)}
+                </Link>))) : (<div className="search-empty"><p>{t("No places found. Try another name or category.")}</p><button className="experience-link" onClick={() => { setQuery(""); searchInput.current?.focus(); }}>{t("Clear search ")}<span aria-hidden="true">→</span></button></div>)}
           </div>
           <p className="selection-note" id="search-help">{t("Use Tab to browse results and Escape to close search.")}</p>
         </div>

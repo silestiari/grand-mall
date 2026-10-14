@@ -28,7 +28,7 @@
 .directory-reset { min-height: 44px; }
 .directory-reset span { margin-left: 12px; color: var(--accent); }
 .directory-column-labels, .directory-row { display: grid; grid-template-columns: minmax(0,1.9fr) minmax(0,.85fr) 80px 80px; gap: 24px; align-items: center; }
-.directory-column-labels { padding: 26px 0 16px; color: var(--muted); font-size: 10px; }
+.directory-column-labels { padding: 26px 0 16px; color: var(--muted); font-size: 12px; }
 .directory-column-labels > span:last-child { text-align: right; }
 .directory-list li { border-bottom: 1px solid var(--line); }
 .directory-row { padding: 28px 0; min-height: 100px; }
@@ -76,26 +76,26 @@
   .directory-categories button { font-size: 12px; }
   .directory-floor-bar { flex-wrap: wrap; gap: 8px 16px; padding-block: 16px; }
   .directory-floor { gap: 12px; }
-  .directory-floor label { font-size: 10px; }
+  .directory-floor label { font-size: 12px; }
   .directory-floor select { font-size: 12px; padding-right: 20px; }
-  .directory-count { font-size: 10px; }
-  .directory-reset { width: 100%; text-align: left; min-height: 36px; font-size: 10px; }
+  .directory-count { font-size: 12px; }
+  .directory-reset { width: 100%; text-align: left; min-height: 36px; font-size: 12px; }
   .directory-column-labels { display: none; }
   .directory-row { grid-template-columns: minmax(0,1fr) 28px; gap: 12px; padding: 24px 0; }
   .directory-name { font-size: 28px; grid-column: 1; }
   .directory-arrow { grid-column: 2; grid-row: 1 / 3; align-self: center; font-size: 23px; }
   .directory-category { font-size: 11px; grid-column: 1; grid-row: 2; padding-right: 78px; }
   .directory-level { grid-column: 1; grid-row: 2; justify-self: end; font-size: 12px; }
-  .directory-level small { display: inline; color: var(--muted); font-size: 10px; margin-right: 5px; }
+  .directory-level small { display: inline; color: var(--muted); font-size: 12px; margin-right: 5px; }
   .directory-bottom { align-items: flex-start; flex-direction: column; gap: 22px; }
   .store-detail-heading { margin: 24px 0 32px; }
   .store-detail-heading h1 { font-size: 14vw; }
-  .store-detail-heading > p { font-size: 10px; }
+  .store-detail-heading > p { font-size: 12px; }
   .store-detail-layout { display: block; }
   .store-detail-image { height: 105vw; min-height: 300px; max-height: 550px; margin-bottom: 30px; }
   .store-description { font-size: 20px; margin-bottom: 24px; }
   .store-detail-information dl > div { display: grid; grid-template-columns: 100px 1fr; gap: 18px; padding-block: 20px; }
-  .store-detail-information dt { font-size: 10px; margin-bottom: 0; }
+  .store-detail-information dt { font-size: 12px; margin-bottom: 0; }
   .store-detail-information dd { font-size: 16px; }
   .store-detail-bottom { align-items: flex-start; flex-direction: column; margin-top: 40px; }
   .store-detail-bottom p a { display: block; min-height: 36px; padding-top: 10px; }
@@ -159,7 +159,7 @@
 .map-search-results { margin-top: 24px; }
 .map-search-results ul { max-height: 280px; overflow: auto; margin-top: 12px; }
 .map-search-results li a { display: flex; justify-content: space-between; align-items: center; padding: 12px 4px; border-bottom: 1px solid var(--line); }
-.map-search-results small { display: block; font-size: 10px; color: var(--muted); margin-top: 3px; }
+.map-search-results small { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
 .map-search-results > p:last-child { font-size: 13px; margin-top: 12px; }
 .map-search-results a:hover { color: var(--accent); }
 .floor-selector { display: flex; gap: 8px; margin: 0 0 32px; }
@@ -181,7 +181,7 @@
 .level-display-bottom > p:last-child { font-size: 12px; color: #59685f; }
 .visit-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 7vw; }
 .visit-fact { display: grid; grid-template-columns: 130px 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
-.visit-fact dt { color: var(--accent); text-transform: uppercase; }
+.visit-fact dt { color: var(--accent); }
 .visit-fact dd { font-size: 18px; line-height: 1.45; letter-spacing: -.02em; overflow-wrap: anywhere; }
 .visit-fact small { display: block; font-size: 12px; color: #666d67; margin-top: 6px; letter-spacing: 0; }
 .visit-fact a:hover { color: var(--accent); }
@@ -196,22 +196,22 @@
 .visit-location-center small { display: block; font-size: 11px; letter-spacing: .2em; margin-top: 14px; }
 .visit-location-bottom { border-top: 1px solid #bfccbf; padding-top: 20px; }
 .visit-location-bottom p { font-size: 12px; margin-bottom: 14px; }
-.visit-location-bottom a { font-size: 10px; letter-spacing: .1em; color: var(--accent); }
+.visit-location-bottom a { font-size: 12px; letter-spacing: .1em; color: var(--accent); }
 .visit-actions { display: flex; gap: 52px; margin-top: 34px; }
-.lifestyle-handle { font-size: 10px; letter-spacing: .12em; color: var(--accent); margin-bottom: 52px; }
+.lifestyle-handle { font-size: 12px; letter-spacing: .12em; color: var(--accent); margin-bottom: 52px; }
 .lifestyle-gallery { display: grid; grid-template-columns: 1fr .8fr 1.1fr .8fr; gap: 24px; align-items: start; }
 .lifestyle-image { height: clamp(220px, 28vw, 480px); }
 .lifestyle-table { margin-top: 90px; }
 .lifestyle-table .lifestyle-image { height: clamp(180px, 20vw, 360px); }
 .lifestyle-architecture { margin-top: 40px; }
 .lifestyle-city { margin-top: 140px; }
-.lifestyle-item figcaption { margin-top: 14px; color: #59685f; font-size: 10px; }
+.lifestyle-item figcaption { margin-top: 14px; color: #59685f; font-size: 12px; }
 .lifestyle-image img { transition: transform .6s ease; }
 .lifestyle-item:hover .lifestyle-image img { transform: scale(1.025); }
 .site-footer { padding: 54px var(--gutter) 24px; background: #090b0b; color: #f4f2ed; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 42px; border-bottom: 1px solid #303535; }
 .footer-top > p { color: #a7aca5; font-size: 15px; line-height: 1.5; }
-.footer-top-link { font-size: 10px; letter-spacing: .1em; }
+.footer-top-link { font-size: 12px; letter-spacing: .1em; }
 .footer-top-link span { color: #8fb7aa; margin-left: 14px; }
 .footer-columns { display: grid; grid-template-columns: .8fr .8fr 1.3fr 1fr; gap: 36px; padding: 44px 0 60px; }
 .footer-columns h2 { color: #8fa59c; margin-bottom: 22px; }
@@ -225,7 +225,7 @@
 .footer-languages h2 { margin-bottom: 10px; }
 .footer-languages a[aria-current] { color: #8fb7aa; }
 .footer-grand { font-size: 14.5vw; font-weight: 500; line-height: 1; letter-spacing: -.075em; white-space: nowrap; padding: 20px 0 36px; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #303535; padding-top: 24px; font-size: 10px; color: #a7aca5; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #303535; padding-top: 24px; font-size: 12px; color: #a7aca5; }
 .footer-bottom > span { letter-spacing: .14em; }
 .footer-bottom nav { display: flex; gap: 24px; }
 @media (max-width: 1100px) {
@@ -249,7 +249,7 @@
   .event-secondary-image { height: 54vw; min-height: 200px; }
   .event-featured h3 { font-size: 28px; }
   .secondary-story h3 { font-size: 24px; }
-  .story-meta { font-size: 10px; }
+  .story-meta { font-size: 12px; }
   .offers-editorial { grid-template-columns: 1fr; gap: 40px; }
   .offer-story-1 { width: 85%; margin-top: 0; margin-left: auto; }
   .offer-image { height: 110vw; min-height: 340px; max-height: 640px; }
@@ -261,33 +261,33 @@
   .batumi-content h2 { font-size: 14vw; }
   .batumi-bottom { display: block; }
   .batumi-bottom > p { font-size: 26px; margin-bottom: 28px; }
-  .batumi-bottom .eyebrow { font-size: 10px; }
+  .batumi-bottom .eyebrow { font-size: 12px; }
   .mall-map-layout, .visit-layout { grid-template-columns: 1fr; gap: 34px; }
   .mall-map-copy .finish-title { font-size: 12vw; }
   .mall-level-display { min-height: 550px; padding: 24px; }
   .level-stack { margin-block: 65px 50px; }
   .visit-fact { grid-template-columns: 90px 1fr; padding: 18px 0; }
-  .visit-fact dt { font-size: 10px; }
+  .visit-fact dt { font-size: 12px; }
   .visit-fact dd { font-size: 15px; }
   .visit-location { min-height: 440px; padding: 24px; }
   .visit-location-center p { font-size: 30px; }
   .visit-actions { flex-direction: column; gap: 24px; }
-  .lifestyle-handle { display: inline-block; margin-bottom: 32px; font-size: 10px; }
+  .lifestyle-handle { display: inline-block; margin-bottom: 32px; font-size: 12px; }
   .lifestyle-gallery { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
   .lifestyle-image { height: 60vw; min-height: 180px; }
   .lifestyle-table { margin-top: 40px; }
   .lifestyle-table .lifestyle-image { height: 43vw; min-height: 145px; }
   .lifestyle-architecture { margin-top: 0; }
   .lifestyle-city { margin-top: 60px; }
-  .lifestyle-item figcaption { font-size: 10px; letter-spacing: .08em; }
+  .lifestyle-item figcaption { font-size: 12px; letter-spacing: .08em; }
   .footer-top { flex-wrap: wrap; align-items: flex-start; gap: 28px; }
   .footer-top > p { font-size: 13px; }
   .footer-top-link { width: 100%; }
   .footer-columns { gap: 32px 20px; padding-bottom: 30px; }
-  .footer-columns h2 { font-size: 10px; letter-spacing: .1em; }
+  .footer-columns h2 { font-size: 12px; letter-spacing: .1em; }
   .footer-columns nav > a, .footer-visitor > a, .footer-visitor address { font-size: 12px; }
   .footer-grand { font-size: 13.6vw; padding-bottom: 28px; }
-  .footer-bottom { flex-wrap: wrap; gap: 18px; font-size: 10px; }
+  .footer-bottom { flex-wrap: wrap; gap: 18px; font-size: 12px; }
   .footer-bottom nav { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -356,7 +356,7 @@ input:focus-visible {
   transform: translateY(0);
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.14em;
   line-height: 1.6;
@@ -473,7 +473,7 @@ input:focus-visible {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 .language-option { display: flex; align-items: center; gap: 6px; }
 .languages a, .languages .current { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; min-height: 36px; }
@@ -646,7 +646,7 @@ input:focus-visible {
   display: flex;
   gap: clamp(18px, 3vw, 54px);
   flex-wrap: wrap;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.09em;
   font-weight: 500;
 }
@@ -655,7 +655,7 @@ input:focus-visible {
 }
 .quick-map {
   color: var(--accent);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   display: flex;
   flex-shrink: 0;
@@ -800,7 +800,7 @@ input:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.11em;
   margin-top: 16px;
   color: var(--muted);
@@ -867,7 +867,7 @@ input:focus-visible {
 }
 .selection-note {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 16px;
   line-height: 1.6;
@@ -954,7 +954,7 @@ html:has(dialog[open]) {
   text-align: left;
 }
 .mobile-menu-bottom > a:last-child {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .search-dialog {
@@ -999,7 +999,7 @@ html:has(dialog[open]) {
 .search-results small {
   margin-left: auto;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 .search-results > p {
   padding: 20px 0;
@@ -1112,7 +1112,7 @@ html:has(dialog[open]) {
     padding: 112px var(--gutter) 105px;
   }
   .hero-eyebrow {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     margin-bottom: 32px;
     gap: 10px;
@@ -1145,10 +1145,10 @@ html:has(dialog[open]) {
     min-height: 51px;
     padding: 0 16px;
     gap: 20px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .hero-visit {
-    font-size: 10px;
+    font-size: 12px;
     gap: 14px;
     white-space: nowrap;
   }
@@ -1159,7 +1159,7 @@ html:has(dialog[open]) {
     display: none;
   }
   .scroll-link {
-    font-size: 10px;
+    font-size: 12px;
     gap: 16px;
   }
   .quick-info {
@@ -1171,7 +1171,7 @@ html:has(dialog[open]) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 22px 10px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.055em;
   }
   .quick-map {
@@ -1179,7 +1179,7 @@ html:has(dialog[open]) {
     border-top: 1px solid var(--line);
     padding-top: 18px;
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 12px;
   }
   .section-padding {
     padding: 48px var(--gutter) 56px;
@@ -1188,7 +1188,7 @@ html:has(dialog[open]) {
     display: none;
   }
   .section-topline .eyebrow {
-    font-size: 10px;
+    font-size: 12px;
   }
   .numbers-intro,
   .brands-intro {
@@ -1223,12 +1223,12 @@ html:has(dialog[open]) {
     padding: 0;
   }
   .statistic h3 {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0 0 8px;
     align-self: end;
   }
   .statistic p {
-    font-size: 10px;
+    font-size: 12px;
     align-self: start;
     line-height: 1.7;
   }
@@ -1353,7 +1353,7 @@ html:has(dialog[open]) {
   min-height: 52px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--accent);
@@ -1846,7 +1846,7 @@ html:has(dialog[open]) {
   }
   .architecture-bottom a {
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 12px;
   }
   .day-shop,
   .day-eat {
@@ -1866,7 +1866,7 @@ html:has(dialog[open]) {
     margin-bottom: 24px;
   }
   .day-label {
-    font-size: 10px;
+    font-size: 12px;
   }
   .day-description {
     font-size: 14px;
@@ -1943,7 +1943,7 @@ html:has(dialog[open]) {
     display: block;
   }
   .dining-bottom > p {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 20px;
   }
   .entertainment-intro {
@@ -2035,7 +2035,9 @@ html[lang="ka"] :is(.hero h1, .directory-hero h1, .store-detail-heading h1, .fin
   .dining-hero-content h1, .dining-page-intro h2, .dining-directory-page h2, .dining-feature-copy h3,
   .ent-hero h1, .ent-intro h2, .ent-venue h2, .ent-quick-nav h2, .ent-detail-heading h1,
   .map-side-heading h1, .visit-page h1, .journal-hero h1) { font-weight: 500; }
-.eyebrow { font-size: 11px; letter-spacing: .1em; }
+/* Labels are sentence case now: no caps tracking, readable size. */
+.eyebrow { font-size: 13px; letter-spacing: 0; }
+.experience-link, .text-link, .footer-top-link, .footer-bottom > span { letter-spacing: 0; font-size: 13px; }
 html :is(.finish-heading-row > p, .event-featured > p, .offers-bottom p) { font-size: 16px; line-height: 1.6; max-width: 56ch; }
 html :is(.button, .hero-facade .button-light) { border-radius: 999px; }
 .directory-floor select { border-radius: 4px; }
@@ -2053,3 +2055,6 @@ html :is(.button, .hero-facade .button-light) { border-radius: 999px; }
 /* One deep brand green for dark sections instead of near-black. */
 .entertainment-section, .ent-page, .ent-detail-page { background: var(--green-950); }
 .ent-hero-shade { background: linear-gradient(90deg, #0c2325dd, #0c232540), linear-gradient(0deg, #0c2325, transparent 60%); }
+/* Arrows mark only links that leave the site; internal text links get an underline on hover. */
+:is(.experience-link, .text-link)[href^="/"] > span[aria-hidden="true"] { display: none; }
+:is(.experience-link, .text-link)[href^="/"]:hover { text-decoration: underline; text-underline-offset: .3em; }

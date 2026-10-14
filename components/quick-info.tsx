@@ -11,7 +11,7 @@ export function QuickInfo() {
         <span>{t("CINEMA")}</span>
         <span>{t("ENTERTAINMENT")}</span>
       </div>
-      <Link className="quick-map" href="/map">{t("FIND YOUR WAY")}<span aria-hidden="true">↗</span>
+      <Link className="quick-map" href="/map">{t("Find your way")}<span aria-hidden="true">↗</span>
       </Link>
     </section>);
 }

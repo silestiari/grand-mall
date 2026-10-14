@@ -61,6 +61,7 @@ html[lang="ka"] .ent-hero h1 {
 /* Mtavruli capitals are wider than the default 13vw allows for this single long word. */
 html[lang="ka"] .batumi-content h2 { font-size: clamp(70px, 12.4vw, 240px); }
 html[lang="ka"] .visit-arrival h2 { font-size: clamp(28px, 3.7vw, 60px); }
+html[lang="ka"] .visit-fact { grid-template-columns: 150px 1fr; }
 @media (max-width: 1100px) {
   /* Georgian labels such as "accessibility" are wider than the narrow label column. */
   html[lang="ka"] .visit-fact { grid-template-columns: minmax(0, 1fr); gap: 6px; }
@@ -243,7 +244,7 @@ html[lang="ka"] .hero.hero-facade h1 { --hero-line-height: 1.16; font-size: clam
   display: block; padding: 18px; border: 1px solid #183e361a; border-radius: 4px; background: #ffffff66;
 }
 :is(.store-page, .dining-venue-page) .store-detail-information dl > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
-:is(.store-page, .dining-venue-page) .store-detail-information dt { margin-bottom: 12px; font-size: 10px; }
+:is(.store-page, .dining-venue-page) .store-detail-information dt { margin-bottom: 12px; font-size: 12px; }
 :is(.store-page, .dining-venue-page) .store-detail-information dd { font-size: 22px; overflow-wrap: anywhere; }
 :is(.store-page, .dining-venue-page) .store-detail-actions { gap: 12px; }
 :is(.store-page, .dining-venue-page) .store-detail-actions .experience-link {

@@ -6,8 +6,8 @@ export function MallNumbers() {
     return (<section className="numbers section-padding" id="numbers" aria-labelledby="numbers-title">
       <Reveal>
         <div className="section-topline">
-          <p className="eyebrow">{t("GRAND MALL IN NUMBERS")}</p>
-          <span className="eyebrow">{t("MORE THAN A DESTINATION")}</span>
+          <p className="eyebrow">{t("Grand Mall in numbers")}</p>
+          <span className="eyebrow">{t("More than a destination")}</span>
         </div>
         <div className="numbers-intro">
           <h2 id="numbers-title">{t("MORE THAN")}<br />
