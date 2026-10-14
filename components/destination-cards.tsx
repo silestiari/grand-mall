@@ -2,11 +2,12 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useCopy } from "@/i18n/copy";
 import { officialMedia } from "@/lib/official-media";
+import { stockMedia } from "@/lib/stock-media";
 
 const destinations = [
   { title: "Stores", href: "/stores", media: officialMedia.zara, tone: "emerald" },
   { title: "Dining", href: "/dining", media: officialMedia.cafe, tone: "bronze" },
-  { title: "Entertainment", href: "/entertainment", media: officialMedia.bowling, tone: "ocean" },
+  { title: "Entertainment", href: "/entertainment", media: stockMedia.bowling, tone: "ocean" },
 ] as const;
 
 export function DestinationCards() {

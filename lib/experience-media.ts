@@ -1,14 +1,15 @@
 import { officialMedia } from "./official-media";
+import { stockMedia } from "./stock-media";
 
 export const experienceMedia = {
   atrium: officialMedia.exterior,
   shop: officialMedia.mango,
   eat: officialMedia.cafe,
-  play: officialMedia.bowling,
-  wonderland: officialMedia.wonderland,
+  play: stockMedia.bowling,
+  wonderland: stockMedia.wonderland,
   restaurant: officialMedia.restaurant,
   coffee: officialMedia.coffee,
-  cinema: officialMedia.cinema,
-  bowling: officialMedia.bowling,
-  fitness: officialMedia.fitness,
+  cinema: stockMedia.cinema,
+  bowling: stockMedia.bowling,
+  fitness: stockMedia.fitness,
 };

@@ -1,3 +1,3 @@
-import { officialMedia } from "./official-media";
+import { stockMedia } from "./stock-media";
 
-export const entertainmentHero = officialMedia.bowling;
+export const entertainmentHero = stockMedia.bowling;
