@@ -43,3 +43,5 @@ next-env.d.ts
 grand-mall.zip.zip
 # claude code / playwright mcp artifacts
 .playwright-mcp/
+/test-results/
+/playwright-report/
