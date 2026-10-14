@@ -94,3 +94,8 @@
 
 /* Social links share a rule with the green brand link, so they are set by hand. */
 :root[data-theme="dark"] .journal-page .journal-social .experience-link { background: var(--paper); border-color: var(--line); }
+
+/* Entertainment pages stay dark in both themes, so their text must not follow --background. */
+:root[data-theme="dark"] :is(.ent-page, .ent-detail-page, .ent-page .experience-link, .ent-detail-page .experience-link) { color: #faf9f6; }
+:root[data-theme="dark"] .skip-link { background: var(--paper); color: var(--foreground); }
+:root[data-theme="dark"] select { border-color: #5b726d; }
