@@ -51,7 +51,7 @@ test("header search announces results and Escape returns focus", async ({ page }
   await trigger.click();
   await expect(page.locator("#store-search")).toBeFocused();
   await page.locator("#store-search").fill("zara");
-  await expect(page.locator(".search-status")).toHaveText(/1/);
+  await expect(page.locator(".search-status")).toHaveText(/\D1$/);
   await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
 });
@@ -84,6 +84,8 @@ for (const width of [320, 390, 768]) {
     await page.setViewportSize({ width, height: 900 });
     for (const path of ["/ka", "/ru", "/en", "/ka/stores", "/ru/dining", "/ka/map", "/ka/visit", "/ru/offers"]) {
       await page.goto(path);
+      // Locale fonts swap in after load and change heading widths; measure the final layout.
+      await page.evaluate(() => document.fonts.ready);
       const problems = await page.evaluate(() => {
         const root = document.documentElement;
         const clipped = [...document.querySelectorAll("h1, h2, h3")]
