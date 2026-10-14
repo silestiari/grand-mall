@@ -41,7 +41,7 @@
 .journal-atmosphere { border-radius: 4px; border: 1px solid #183e361a; }
 .journal-social { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .journal-page .journal-social .experience-link, .journal-page .journal-brand-link {
-  width: 100%; padding: 18px; border: 1px solid #183e3626; border-radius: 4px;
+  width: 100%; gap: 12px; padding: 18px; border: 1px solid #183e3626; border-radius: 4px;
   background: #ffffff66; line-height: 1.5; transition: box-shadow .35s, border-color .35s;
 }
 .journal-page .journal-brand-link { background: linear-gradient(135deg, #2e6151, #153f35); color: #fff; }

@@ -61,9 +61,15 @@ html[lang="ka"] .ent-hero h1 {
 /* Mtavruli capitals are wider than the default 13vw allows for this single long word. */
 html[lang="ka"] .batumi-content h2 { font-size: clamp(70px, 12.4vw, 240px); }
 html[lang="ka"] .visit-arrival h2 { font-size: clamp(28px, 3.7vw, 60px); }
+@media (max-width: 1100px) {
+  /* Georgian labels such as "accessibility" are wider than the narrow label column. */
+  html[lang="ka"] .visit-fact { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+}
 @media (max-width: 420px) {
   html[lang="ru"] .visit-transport-list h3 { font-size: 22px; }
   html[lang="ka"] .visit-transport-list h3 { font-size: 19px; }
+  html[lang="ka"] .batumi-bottom > p { font-size: 21px; }
+  .journal-page .journal-social { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 1100px) {
   html:is([lang="ru"], [lang="ka"]) .hero { min-height: max(680px, 100svh); }

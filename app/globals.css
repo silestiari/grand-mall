@@ -17,6 +17,8 @@
 .directory-categories button { flex: 0 0 auto; min-height: 44px; border-bottom: 1px solid transparent; font-size: 13px; color: var(--muted); transition: color .2s, border-color .2s; }
 .directory-categories button[aria-pressed="true"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
 .directory-categories button:hover { color: var(--accent); }
+/* The scroll container clips overflow; keep the 2px ring inside its 6px padding. */
+.directory-categories button:focus-visible { outline-offset: 2px; }
 .directory-floor-bar { display: flex; align-items: center; gap: 30px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .directory-floor { display: flex; align-items: center; gap: 16px; }
 .directory-floor label { color: var(--accent); }
@@ -26,7 +28,7 @@
 .directory-reset { min-height: 44px; }
 .directory-reset span { margin-left: 12px; color: var(--accent); }
 .directory-column-labels, .directory-row { display: grid; grid-template-columns: minmax(0,1.9fr) minmax(0,.85fr) 80px 80px; gap: 24px; align-items: center; }
-.directory-column-labels { padding: 26px 0 16px; color: var(--muted); font-size: 9px; }
+.directory-column-labels { padding: 26px 0 16px; color: var(--muted); font-size: 10px; }
 .directory-column-labels > span:last-child { text-align: right; }
 .directory-list li { border-bottom: 1px solid var(--line); }
 .directory-row { padding: 28px 0; min-height: 100px; }
@@ -74,10 +76,10 @@
   .directory-categories button { font-size: 12px; }
   .directory-floor-bar { flex-wrap: wrap; gap: 8px 16px; padding-block: 16px; }
   .directory-floor { gap: 12px; }
-  .directory-floor label { font-size: 9px; }
+  .directory-floor label { font-size: 10px; }
   .directory-floor select { font-size: 12px; padding-right: 20px; }
-  .directory-count { font-size: 9px; }
-  .directory-reset { width: 100%; text-align: left; min-height: 36px; font-size: 9px; }
+  .directory-count { font-size: 10px; }
+  .directory-reset { width: 100%; text-align: left; min-height: 36px; font-size: 10px; }
   .directory-column-labels { display: none; }
   .directory-row { grid-template-columns: minmax(0,1fr) 28px; gap: 12px; padding: 24px 0; }
   .directory-name { font-size: 28px; grid-column: 1; }
@@ -88,12 +90,12 @@
   .directory-bottom { align-items: flex-start; flex-direction: column; gap: 22px; }
   .store-detail-heading { margin: 24px 0 32px; }
   .store-detail-heading h1 { font-size: 14vw; }
-  .store-detail-heading > p { font-size: 9px; }
+  .store-detail-heading > p { font-size: 10px; }
   .store-detail-layout { display: block; }
   .store-detail-image { height: 105vw; min-height: 300px; max-height: 550px; margin-bottom: 30px; }
   .store-description { font-size: 20px; margin-bottom: 24px; }
   .store-detail-information dl > div { display: grid; grid-template-columns: 100px 1fr; gap: 18px; padding-block: 20px; }
-  .store-detail-information dt { font-size: 9px; margin-bottom: 0; }
+  .store-detail-information dt { font-size: 10px; margin-bottom: 0; }
   .store-detail-information dd { font-size: 16px; }
   .store-detail-bottom { align-items: flex-start; flex-direction: column; margin-top: 40px; }
   .store-detail-bottom p a { display: block; min-height: 36px; padding-top: 10px; }
@@ -180,7 +182,7 @@
 .visit-location::before { content: ""; position: absolute; width: 70%; height: 150%; left: -38%; top: -20%; border-right: 1px solid #88aba3; background: #d2e0d9; transform: rotate(18deg); }
 .visit-location::after { content: ""; position: absolute; width: 80%; height: 150%; left: -38%; top: -20%; border-right: 1px solid #a7beb2; transform: rotate(18deg); }
 .visit-location > div { position: relative; z-index: 1; }
-.visit-location-top { display: flex; justify-content: space-between; gap: 14px; color: #627c70; }
+.visit-location-top { display: flex; justify-content: space-between; gap: 14px; color: #4f685d; }
 .visit-location-center { margin-left: 30%; }
 .location-marker { color: var(--accent); font-size: 46px; font-weight: 300; }
 .visit-location-center p { font-size: clamp(24px, 3vw, 45px); font-weight: 500; letter-spacing: -.05em; line-height: 1; }
@@ -196,7 +198,7 @@
 .lifestyle-table .lifestyle-image { height: clamp(180px, 20vw, 360px); }
 .lifestyle-architecture { margin-top: 40px; }
 .lifestyle-city { margin-top: 140px; }
-.lifestyle-item figcaption { margin-top: 14px; color: #59685f; font-size: 9px; }
+.lifestyle-item figcaption { margin-top: 14px; color: #59685f; font-size: 10px; }
 .lifestyle-image img { transition: transform .6s ease; }
 .lifestyle-item:hover .lifestyle-image img { transform: scale(1.025); }
 .site-footer { padding: 54px var(--gutter) 24px; background: #090b0b; color: #f4f2ed; }
@@ -216,7 +218,7 @@
 .footer-languages h2 { margin-bottom: 10px; }
 .footer-languages a[aria-current] { color: #8fb7aa; }
 .footer-grand { font-size: 14.5vw; font-weight: 500; line-height: 1; letter-spacing: -.075em; white-space: nowrap; padding: 20px 0 36px; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #303535; padding-top: 24px; font-size: 9px; color: #a7aca5; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #303535; padding-top: 24px; font-size: 10px; color: #a7aca5; }
 .footer-bottom > span { letter-spacing: .14em; }
 .footer-bottom nav { display: flex; gap: 24px; }
 @media (max-width: 1100px) {
@@ -240,7 +242,7 @@
   .event-secondary-image { height: 54vw; min-height: 200px; }
   .event-featured h3 { font-size: 28px; }
   .secondary-story h3 { font-size: 24px; }
-  .story-meta { font-size: 9px; }
+  .story-meta { font-size: 10px; }
   .offers-editorial { grid-template-columns: 1fr; gap: 40px; }
   .offer-story-1 { width: 85%; margin-top: 0; margin-left: auto; }
   .offer-image { height: 110vw; min-height: 340px; max-height: 640px; }
@@ -252,33 +254,33 @@
   .batumi-content h2 { font-size: 14vw; }
   .batumi-bottom { display: block; }
   .batumi-bottom > p { font-size: 26px; margin-bottom: 28px; }
-  .batumi-bottom .eyebrow { font-size: 8px; }
+  .batumi-bottom .eyebrow { font-size: 10px; }
   .mall-map-layout, .visit-layout { grid-template-columns: 1fr; gap: 34px; }
   .mall-map-copy .finish-title { font-size: 12vw; }
   .mall-level-display { min-height: 550px; padding: 24px; }
   .level-stack { margin-block: 65px 50px; }
   .visit-fact { grid-template-columns: 90px 1fr; padding: 18px 0; }
-  .visit-fact dt { font-size: 8px; }
+  .visit-fact dt { font-size: 10px; }
   .visit-fact dd { font-size: 15px; }
   .visit-location { min-height: 440px; padding: 24px; }
   .visit-location-center p { font-size: 30px; }
   .visit-actions { flex-direction: column; gap: 24px; }
-  .lifestyle-handle { display: inline-block; margin-bottom: 32px; font-size: 9px; }
+  .lifestyle-handle { display: inline-block; margin-bottom: 32px; font-size: 10px; }
   .lifestyle-gallery { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
   .lifestyle-image { height: 60vw; min-height: 180px; }
   .lifestyle-table { margin-top: 40px; }
   .lifestyle-table .lifestyle-image { height: 43vw; min-height: 145px; }
   .lifestyle-architecture { margin-top: 0; }
   .lifestyle-city { margin-top: 60px; }
-  .lifestyle-item figcaption { font-size: 8px; letter-spacing: .08em; }
+  .lifestyle-item figcaption { font-size: 10px; letter-spacing: .08em; }
   .footer-top { flex-wrap: wrap; align-items: flex-start; gap: 28px; }
   .footer-top > p { font-size: 13px; }
   .footer-top-link { width: 100%; }
   .footer-columns { gap: 32px 20px; padding-bottom: 30px; }
-  .footer-columns h2 { font-size: 8px; letter-spacing: .1em; }
+  .footer-columns h2 { font-size: 10px; letter-spacing: .1em; }
   .footer-columns nav > a, .footer-visitor > a, .footer-visitor address { font-size: 12px; }
   .footer-grand { font-size: 13.6vw; padding-bottom: 28px; }
-  .footer-bottom { flex-wrap: wrap; gap: 18px; font-size: 8px; }
+  .footer-bottom { flex-wrap: wrap; gap: 18px; font-size: 10px; }
   .footer-bottom nav { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -791,7 +793,7 @@ input:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.11em;
   margin-top: 16px;
   color: var(--muted);
@@ -1103,7 +1105,7 @@ html:has(dialog[open]) {
     padding: 112px var(--gutter) 105px;
   }
   .hero-eyebrow {
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.1em;
     margin-bottom: 32px;
     gap: 10px;
@@ -1150,7 +1152,7 @@ html:has(dialog[open]) {
     display: none;
   }
   .scroll-link {
-    font-size: 8px;
+    font-size: 10px;
     gap: 16px;
   }
   .quick-info {
@@ -1162,7 +1164,7 @@ html:has(dialog[open]) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 22px 10px;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.055em;
   }
   .quick-map {
@@ -1170,7 +1172,7 @@ html:has(dialog[open]) {
     border-top: 1px solid var(--line);
     padding-top: 18px;
     justify-content: space-between;
-    font-size: 9px;
+    font-size: 10px;
   }
   .section-padding {
     padding: 48px var(--gutter) 56px;
@@ -1179,7 +1181,7 @@ html:has(dialog[open]) {
     display: none;
   }
   .section-topline .eyebrow {
-    font-size: 9px;
+    font-size: 10px;
   }
   .numbers-intro,
   .brands-intro {
@@ -1214,7 +1216,7 @@ html:has(dialog[open]) {
     padding: 0;
   }
   .statistic h3 {
-    font-size: 8px;
+    font-size: 10px;
     margin: 0 0 8px;
     align-self: end;
   }
@@ -1840,7 +1842,7 @@ html:has(dialog[open]) {
   }
   .architecture-bottom a {
     justify-content: space-between;
-    font-size: 9px;
+    font-size: 10px;
   }
   .day-shop,
   .day-eat {
@@ -1860,7 +1862,7 @@ html:has(dialog[open]) {
     margin-bottom: 24px;
   }
   .day-label {
-    font-size: 9px;
+    font-size: 10px;
   }
   .day-description {
     font-size: 14px;
@@ -1937,7 +1939,7 @@ html:has(dialog[open]) {
     display: block;
   }
   .dining-bottom > p {
-    font-size: 8px;
+    font-size: 10px;
     margin-bottom: 20px;
   }
   .entertainment-intro {

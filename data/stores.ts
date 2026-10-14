@@ -318,7 +318,7 @@ export const stores: Store[] = [
   },
   {
     "name": "Adidas",
-    "slug": "giordano",
+    "slug": "adidas",
     "category": "Sport",
     "categories": [
       "Sport",
@@ -816,7 +816,7 @@ export const stores: Store[] = [
   },
   {
     "name": "Shavdia",
-    "slug": "tefal",
+    "slug": "shavdia",
     "category": "Fashion",
     "categories": [
       "Fashion"

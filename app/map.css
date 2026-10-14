@@ -13,8 +13,8 @@
 .map-directory-categories button:hover { color: var(--accent); }
 .map-results { margin-top: 22px; }
 .map-results-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.map-results-top .eyebrow { font-size: 9px; color: var(--accent); }
-.map-results-toggle { display: none; min-height: 44px; font-size: 9px; }
+.map-results-top .eyebrow { font-size: 10px; color: var(--accent); }
+.map-results-toggle { display: none; min-height: 44px; font-size: 10px; }
 .map-result-list { max-height: 330px; overflow-y: auto; scrollbar-width: thin; margin-top: 12px; padding: 6px; margin-inline: -6px; }
 .map-result-list li { display: flex; align-items: stretch; border-bottom: 1px solid var(--line); }
 .map-result-list li button { display: flex; align-items: center; text-align: left; min-width: 0; flex: 1; padding: 18px 2px; }
@@ -78,22 +78,22 @@
   .map-directory-categories { grid-area: categories; flex-wrap: nowrap; overflow-x: auto; gap: 18px; padding: 14px 6px; margin-inline: -6px; scrollbar-width: thin; }
   .map-directory-categories button { flex: 0 0 auto; font-size: 11px; }
   .map-floor-controls { grid-area: floors; margin: 22px 0 0; gap: 14px; flex-wrap: wrap; }
-  .map-floor-controls > p { font-size: 9px; }
+  .map-floor-controls > p { font-size: 10px; }
   .map-floor-controls button { width: 44px; height: 44px; font-size: 14px; }
   .map-results { grid-area: results; margin: 16px 0; }
-  .map-results-top .eyebrow { font-size: 8px; }
+  .map-results-top .eyebrow { font-size: 10px; }
   .map-results-toggle { display: block; }
   .map-result-list { max-height: 230px; }
   .map-results:not(.map-results-expanded) .map-result-list { display: none; }
   .map-result-name { font-size: 21px; }
   .map-canvas { grid-area: canvas; padding: 18px 12px; }
-  .map-canvas-top .eyebrow { font-size: 8px; }
+  .map-canvas-top .eyebrow { font-size: 10px; }
   .map-floor-graphic { margin: 12px 0; }
   .map-canvas-note { gap: 10px; padding-top: 16px; }
   .map-canvas-note p { font-size: 11px; }
   .map-selection { grid-area: selection; margin-top: 22px; }
   .map-selection h2 { font-size: 32px; }
-  .map-selection-top .eyebrow { font-size: 9px; }
+  .map-selection-top .eyebrow { font-size: 10px; }
 }
 /* Directory controls and place cards share the site's quiet green palette. */
 .map-directory-search input {

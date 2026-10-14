@@ -89,7 +89,7 @@
   .dining-directory-page { scroll-margin-top: 16px; }
   .dining-directory-page .directory-search { margin-top: 24px; }
   .dining-result-bar { gap: 12px; }
-  .dining-result-bar .eyebrow { font-size: 9px; }
+  .dining-result-bar .eyebrow { font-size: 10px; }
   .dining-venue-page { padding-top: 108px; padding-bottom: 54px; }
   .dining-detail .store-detail-heading h1 { font-size: 16vw; }
   .dining-detail-hero { height: 106vw; min-height: 300px; max-height: 530px; }

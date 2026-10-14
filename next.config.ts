@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
     return config;
   },
   async redirects() {
-    return [{ source: "/entertainment/oktopus", destination: "/en/entertainment/oktopus-fitness", permanent: true }, { source: "/:locale(en|ru|ka)/entertainment/oktopus", destination: "/:locale/entertainment/oktopus-fitness", permanent: true }];
+    // Legacy upstream slugs named other brands: Adidas was "giordano", Shavdia was "tefal".
+    const stores = [["giordano", "adidas"], ["tefal", "shavdia"]].flatMap(([from, to]) => [
+      { source: `/stores/${from}`, destination: `/en/stores/${to}`, permanent: true },
+      { source: `/:locale(en|ru|ka)/stores/${from}`, destination: `/:locale/stores/${to}`, permanent: true },
+    ]);
+    return [{ source: "/entertainment/oktopus", destination: "/en/entertainment/oktopus-fitness", permanent: true }, { source: "/:locale(en|ru|ka)/entertainment/oktopus", destination: "/:locale/entertainment/oktopus-fitness", permanent: true }, ...stores];
   },
 };
 
