@@ -36,3 +36,7 @@
   .home, .destination, .arrow { transition: none; }
   .destination:hover .arrow { transform: none; }
 }
+
+/* Dark theme (data-theme is a global attribute on <html>). */
+:global(:root[data-theme="dark"]) :is(.number, .destination, .destination:nth-child(n)) { background: var(--paper); border-color: var(--line); }
+:global(:root[data-theme="dark"]) .number { color: var(--accent); }

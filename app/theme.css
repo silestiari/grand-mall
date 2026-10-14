@@ -1,0 +1,96 @@
+/* Theme toggle and dark theme. data-theme is set before paint by the script in app/[locale]/layout.tsx. */
+.theme-toggle { display: inline-grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; border: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-radius: 999px; color: inherit; transition: border-color .2s; }
+.theme-toggle:hover { border-color: currentColor; }
+.theme-toggle svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.mobile-menu-bottom .theme-toggle { display: inline-flex; gap: 10px; width: auto; height: 44px; padding: 0 18px; font-size: 13px; }
+
+/* Dark palette: the brand's deep green with cream text. Photos and already-dark sections are unchanged. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0d1c1d;
+  --foreground: #ebeae4;
+  --muted: #a3b0a9;
+  --accent: #8cc9b8;
+  --line: #2b403e;
+  --paper: #132729;
+  --green-100: #16302f;
+}
+/* Places where the accent is a fill behind light text keep a deeper green. */
+:root[data-theme="dark"] :is(.floor-selector button[aria-pressed="true"], .map-floor-controls button[aria-pressed="true"], .button-light:hover) { background: #2e7a6f; color: #fff; }
+:root[data-theme="dark"] ::selection { background: #2e7a6f; color: #fff; }
+:root[data-theme="dark"] .button-light { color: #111311; }
+:root[data-theme="dark"] .brands { background: var(--paper); }
+:root[data-theme="dark"] img { filter: brightness(.94); }
+
+/* Illustrative floor overview: a dark plan instead of a light card. */
+:root[data-theme="dark"] .map-outline { fill: #1b3433; stroke: #3d5653; }
+:root[data-theme="dark"] :is(.map-walkway, .map-open-space) { fill: #132729; stroke: #3d5653; }
+:root[data-theme="dark"] .map-room { fill: #21403d; stroke: #3d5653; }
+:root[data-theme="dark"] .map-grid-line { stroke: #3d5653; }
+
+/* Generated from hard-coded light surfaces, dark text and light borders in the page stylesheets. */
+:root[data-theme="dark"] .store-detail-image { background: var(--paper); }
+:root[data-theme="dark"] .event-featured > p,
+:root[data-theme="dark"] .secondary-story > p { color: var(--muted); }
+:root[data-theme="dark"] .offers-bottom p,
+:root[data-theme="dark"] .lifestyle-bottom p { color: var(--muted); }
+:root[data-theme="dark"] .map-explanation { color: var(--muted); }
+:root[data-theme="dark"] .mall-level-display { background: var(--paper); }
+:root[data-theme="dark"] .level-display-top { color: var(--muted); }
+:root[data-theme="dark"] .level-layer { background: var(--paper); }
+:root[data-theme="dark"] .level-layer span { color: var(--muted); }
+:root[data-theme="dark"] .level-display-bottom > p:last-child { color: var(--muted); }
+:root[data-theme="dark"] .visit-fact small { color: var(--muted); }
+:root[data-theme="dark"] .visit-location { background: var(--paper); }
+:root[data-theme="dark"] .visit-location::before { background: var(--paper); }
+:root[data-theme="dark"] .visit-location-top { color: var(--muted); }
+:root[data-theme="dark"] .lifestyle-item figcaption { color: var(--muted); }
+:root[data-theme="dark"] .header-scrolled { background: var(--paper); }
+:root[data-theme="dark"] .numbers-intro > p,
+:root[data-theme="dark"] .brands-intro > p { color: var(--muted); }
+:root[data-theme="dark"] .brands-photo { background: var(--paper); }
+:root[data-theme="dark"] .immersive-image { background: var(--paper); }
+:root[data-theme="dark"] .day-description { color: var(--muted); }
+:root[data-theme="dark"] .day-eat { background: var(--paper); }
+:root[data-theme="dark"] .dining-copy > p:first-child { color: var(--muted); }
+:root[data-theme="dark"] :is(.store-page, .dining-venue-page) .store-detail-information { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .dining-venue-page .store-detail-information { background: var(--paper); }
+:root[data-theme="dark"] :is(.store-page, .dining-venue-page) .store-detail-information dl > div { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] :is(.store-page, .dining-venue-page) .store-detail-actions .experience-link { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .search-dialog .search-results > a { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .search-empty .experience-link { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .map-canvas { background: var(--paper); }
+:root[data-theme="dark"] .map-canvas-note p { color: var(--muted); }
+:root[data-theme="dark"] .map-directory-search input { border-color: var(--line); background: var(--paper); color: var(--foreground); }
+:root[data-theme="dark"] .map-directory-categories button { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .map-result-list li { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .map-result-arrow { border-color: var(--line); }
+:root[data-theme="dark"] .map-result-list li.map-result-selected { background: var(--paper); }
+:root[data-theme="dark"] .map-floor-controls > div { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .map-floor-controls button { background: var(--paper); }
+:root[data-theme="dark"] .map-canvas { background: var(--paper); }
+:root[data-theme="dark"] .map-selection { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .map-selection .experience-link { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .map-selection:has(#selected-place-title) { border-color: var(--line); }
+:root[data-theme="dark"] .visit-city-location { background: var(--paper); }
+:root[data-theme="dark"] .visit-city-bottom { border-top-color: var(--line); }
+:root[data-theme="dark"] .visit-page .visit-page-actions .experience-link { border-color: var(--line); background: var(--paper); color: var(--foreground); }
+:root[data-theme="dark"] .visit-essentials dl > div,
+:root[data-theme="dark"] .visit-essentials dl > div:nth-child(odd) { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .visit-essentials dl > div:nth-child(2) { background: var(--paper); }
+:root[data-theme="dark"] .visit-essentials small { color: var(--muted); }
+:root[data-theme="dark"] .visit-city-location { border-color: var(--line); }
+:root[data-theme="dark"] .visit-transport-list > div { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .visit-quick-links a { border-color: var(--line); background: var(--paper); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :root[data-theme="dark"] .visit-page .visit-page-actions .experience-link:hover,
+:root[data-theme="dark"] .visit-quick-links a:hover { border-color: var(--line); }
+}
+:root[data-theme="dark"] .journal-empty { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .journal-offers .journal-empty { background: var(--paper); }
+:root[data-theme="dark"] .journal-atmosphere { border-color: var(--line); }
+:root[data-theme="dark"] .journal-story { border-color: var(--line); background: var(--paper); }
+:root[data-theme="dark"] .journal-offer { background: var(--paper); }
+
+/* Social links share a rule with the green brand link, so they are set by hand. */
+:root[data-theme="dark"] .journal-page .journal-social .experience-link { background: var(--paper); border-color: var(--line); }

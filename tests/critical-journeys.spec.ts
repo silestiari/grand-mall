@@ -61,6 +61,20 @@ test("store filters survive opening a store and going back, and language switchi
   await expect(page.locator("#directory-floor")).toHaveValue("1");
 });
 
+test("dark theme follows the system and the toggle choice persists, 404 included", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/en");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.goto("/ru/does-not-exist");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.goto("/en/stores");
+  await page.locator(".header-tools .theme-toggle").click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(page.locator(".header-tools .theme-toggle")).toHaveAttribute("aria-pressed", "false");
+});
+
 test("header search announces results and Escape returns focus", async ({ page }) => {
   await page.goto("/en");
   const trigger = page.locator(".search-trigger");

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
 import { searchDirectory } from "@/lib/directory";
 import { LanguageSelector } from "./language-selector";
+import { ThemeToggle } from "./theme-toggle";
 import { visitorInformation } from "@/data/visitor-info";
 const navigation = [
     "Stores",
@@ -84,6 +85,7 @@ export function Header({ variant = "hero" }: {
           <Link className="map-link" href="/map">{t("Mall Map")}<span aria-hidden="true">↗</span>
           </Link>
           <Languages />
+          <ThemeToggle />
         </div>
         <button className="menu-trigger" aria-label={t("Open navigation menu")} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => {
             menu.current?.showModal();
@@ -111,6 +113,7 @@ export function Header({ variant = "hero" }: {
           <button onClick={openSearch}>{t("Search Grand Mall \u2197")}</button>
           <Link href="/map" onClick={() => menu.current?.close()}>{t("Mall Map \u2197")}</Link>
           <Languages />
+          <ThemeToggle withLabel />
           <Link href={`mailto:${visitorInformation.email}`}>{visitorInformation.email}</Link>
         </div>
       </dialog>

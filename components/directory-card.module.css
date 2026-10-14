@@ -62,3 +62,9 @@
   .monogram { font-size: 110px; }
 }
 @media (prefers-reduced-motion: reduce) { .card, .visual > img, .arrow { transition: none; } }
+
+/* Dark theme (data-theme is a global attribute on <html>). */
+:global(:root[data-theme="dark"]) .card { background: var(--paper); border-color: var(--line); }
+:global(:root[data-theme="dark"]) .copy { color: var(--foreground); }
+:global(:root[data-theme="dark"]) .copy p { color: var(--muted); }
+:global(:root[data-theme="dark"]) .arrow { border-color: var(--line); }
