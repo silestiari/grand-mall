@@ -110,6 +110,13 @@
   --accent: #175e59;
   --line: #d5d7d0;
   --gutter: clamp(24px, 4.2vw, 88px);
+  /* Premium refresh palette, derived from the existing greens and creams. */
+  --green-950: #0c2325;
+  --green-700: #175e59;
+  --green-100: #e4ebe6;
+  --paper: #faf9f6;
+  --brass: #a88b5a;
+  --line-on-dark: rgba(244, 242, 237, .16);
 }
 
 /* Homepage continuation: editorial stories, orientation and visitor information. */
@@ -1672,9 +1679,6 @@ html:has(dialog[open]) {
 .family-heading > .eyebrow {
   color: #aaaead;
 }
-.experience-number {
-  color: #c5d9d1;
-}
 .entertainment-copy h3 {
   font-size: clamp(38px, 4.5vw, 80px);
   font-weight: 400;
@@ -2017,3 +2021,35 @@ html:has(dialog[open]) {
     font-size: 17px;
   }
 }
+
+/* Premium refresh, phase A: one light display voice, quieter labels, calmer surfaces.
+   `html` raises specificity so these win over the same selectors in page stylesheets. */
+html :is(.hero h1, .directory-hero h1, .store-detail-heading h1, .finish-title, .batumi-content h2,
+  .footer-grand, .brands h2, .architectural-break h2, .day-title, .entertainment-intro h2,
+  .dining-hero-content h1, .dining-page-intro h2, .dining-directory-page h2, .dining-feature-copy h3,
+  .ent-hero h1, .ent-intro h2, .ent-venue h2, .ent-quick-nav h2, .ent-detail-heading h1,
+  .map-side-heading h1, .visit-page h1, .journal-hero h1) { font-weight: 400; }
+/* Mtavruli reads too thin at 400 on display sizes. */
+html[lang="ka"] :is(.hero h1, .directory-hero h1, .store-detail-heading h1, .finish-title, .batumi-content h2,
+  .footer-grand, .brands h2, .architectural-break h2, .day-title, .entertainment-intro h2,
+  .dining-hero-content h1, .dining-page-intro h2, .dining-directory-page h2, .dining-feature-copy h3,
+  .ent-hero h1, .ent-intro h2, .ent-venue h2, .ent-quick-nav h2, .ent-detail-heading h1,
+  .map-side-heading h1, .visit-page h1, .journal-hero h1) { font-weight: 500; }
+.eyebrow { font-size: 11px; letter-spacing: .1em; }
+html :is(.finish-heading-row > p, .event-featured > p, .offers-bottom p) { font-size: 16px; line-height: 1.6; max-width: 56ch; }
+html :is(.button, .hero-facade .button-light) { border-radius: 999px; }
+.directory-floor select { border-radius: 4px; }
+.site-footer { background: var(--green-950); }
+.footer-top, .footer-bottom { border-color: var(--line-on-dark); }
+
+/* Premium refresh, phase B: calmer rhythm, flat panels and a glass header. */
+.section-padding { padding-block: clamp(72px, 8.5vw, 128px); }
+/* Sections are separated by surface, not hairlines. */
+.events-section, .offers-section, .mall-map-section, .visit-section, .lifestyle-section { border-top: 0; }
+.offers-section, .visit-section { background: var(--paper); }
+.mall-level-display, .visit-location { background: var(--green-100); }
+.visit-location::before, .visit-location::after { content: none; }
+.header:not(.header-scrolled) { background: rgba(12, 35, 37, .72); backdrop-filter: blur(16px); border-bottom-color: var(--line-on-dark); }
+/* One deep brand green for dark sections instead of near-black. */
+.entertainment-section, .ent-page, .ent-detail-page { background: var(--green-950); }
+.ent-hero-shade { background: linear-gradient(90deg, #0c2325dd, #0c232540), linear-gradient(0deg, #0c2325, transparent 60%); }
