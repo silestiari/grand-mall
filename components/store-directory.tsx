@@ -1,17 +1,20 @@
 "use client";
 import { useCopy } from "@/i18n/copy";
 import { Link } from "@/i18n/navigation";
-import { useState } from "react";
+import { setQueryParams, useQueryParam } from "@/lib/url-query";
 import { DirectoryCard, DirectoryCardList } from "./directory-card";
 import { stores, storeCategories, storeFloors, type StoreCategory, type StoreFloor } from "@/data/stores";
 export function StoreDirectory() {
     const t = useCopy();
-    const [query, setQuery] = useState("");
-    const [category, setCategory] = useState<StoreCategory>("All");
-    const [floor, setFloor] = useState<StoreFloor | "all">("all");
+    const query = useQueryParam("q");
+    const category = (useQueryParam("category", storeCategories) || "All") as StoreCategory;
+    const floor = (useQueryParam("floor", storeFloors) || "all") as StoreFloor | "all";
+    const setQuery = (value: string) => setQueryParams({ q: value });
+    const setCategory = (value: StoreCategory) => setQueryParams({ category: value === "All" ? "" : value });
+    const setFloor = (value: StoreFloor | "all") => setQueryParams({ floor: value === "all" ? "" : value });
     const normalise = (value: string) => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
     const filtered = stores.filter(store => normalise(store.name).includes(normalise(query.trim())) && (category === "All" || store.categories.includes(category)) && (floor === "all" || store.floor === floor));
-    const reset = () => { setQuery(""); setCategory("All"); setFloor("all"); };
+    const reset = () => setQueryParams({ q: "", category: "", floor: "" });
     return (<section className="store-directory" aria-label={t("Store directory")}>
       <div className="directory-search">
         <label className="eyebrow" htmlFor="directory-search">{t("Find your favourite")}</label>

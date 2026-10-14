@@ -45,6 +45,22 @@ test("store search, combined filters and reset update the count", async ({ page 
   await expect(count).toHaveText(/^80 /);
 });
 
+test("store filters survive opening a store and going back, and language switching", async ({ page }) => {
+  await page.goto("/en/stores");
+  await page.locator(".directory-categories button", { hasText: /^Fashion$/ }).click();
+  await page.locator("#directory-floor").selectOption("1");
+  await expect(page).toHaveURL(/category=Fashion/);
+  const count = await page.locator(".directory-count").textContent();
+  await page.locator(".store-directory ul a").first().click();
+  await expect(page).toHaveURL(/\/en\/stores\/[a-z-]+$/);
+  await page.goBack();
+  await expect(page.locator(".directory-count")).toHaveText(count!);
+  await expect(page.locator(".directory-categories button", { hasText: /^Fashion$/ })).toHaveAttribute("aria-pressed", "true");
+  await page.locator('.languages a[hreflang="ru"]:visible').click();
+  await expect(page).toHaveURL(/\/ru\/stores\?.*floor=1/);
+  await expect(page.locator("#directory-floor")).toHaveValue("1");
+});
+
 test("header search announces results and Escape returns focus", async ({ page }) => {
   await page.goto("/en");
   const trigger = page.locator(".search-trigger");

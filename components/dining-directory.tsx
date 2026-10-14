@@ -1,16 +1,18 @@
 "use client";
 import { useCopy } from "@/i18n/copy";
 import { Link } from "@/i18n/navigation";
-import { useState } from "react";
+import { setQueryParams, useQueryParam } from "@/lib/url-query";
 import { DirectoryCard, DirectoryCardList } from "./directory-card";
 import { diningVenues, diningCategories, type DiningCategory } from "@/data/dining";
 const normalise = (value: string) => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 export function DiningDirectory() {
     const t = useCopy();
-    const [query, setQuery] = useState("");
-    const [category, setCategory] = useState<DiningCategory>("All");
+    const query = useQueryParam("q");
+    const category = (useQueryParam("category", diningCategories) || "All") as DiningCategory;
+    const setQuery = (value: string) => setQueryParams({ q: value });
+    const setCategory = (value: DiningCategory) => setQueryParams({ category: value === "All" ? "" : value });
     const filtered = diningVenues.filter(venue => normalise(venue.name).includes(normalise(query.trim())) && (category === "All" || venue.categories.includes(category)));
-    const reset = () => { setQuery(""); setCategory("All"); };
+    const reset = () => setQueryParams({ q: "", category: "" });
     return <section className="dining-directory-page" id="dining-directory" aria-labelledby="dining-directory-title">
     <div className="section-topline"><p className="eyebrow">{t("The dining directory")}</p><span className="eyebrow">{t("Your next stop")}</span></div>
     <h2 id="dining-directory-title">{t("FIND YOUR")}<br />{t("TABLE")}<span className="accent">.</span></h2>
