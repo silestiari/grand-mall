@@ -9,7 +9,7 @@ export function StoreDetail({ store }: {
 }) {
     const t = useCopy();
     return <article className="store-detail">
-    <nav className="store-breadcrumb eyebrow" aria-label={t("Breadcrumb")}><Link href="/stores">{t("STORES & BRANDS")}</Link><span aria-hidden="true">/</span><span aria-current="page">{store.name}</span></nav>
+    <nav className="store-breadcrumb eyebrow" aria-label={t("Breadcrumb")}><Link href="/stores">{t("Stores & brands")}</Link><span aria-hidden="true">/</span><span aria-current="page">{store.name}</span></nav>
     <div className="store-detail-heading"><p className="eyebrow">{t("Grand Mall / ")}{t(store.category.toUpperCase())}</p><h1>{store.name}<span className="accent">.</span></h1></div>
     <div className={store.image ? "store-detail-layout" : "store-detail-layout store-detail-text"}>
       {store.image && <div className="store-detail-image"><Image src={store.image.src} alt={t(store.image.alt)} fill sizes="(max-width: 700px) 100vw, 60vw" preload/></div>}

@@ -16,6 +16,6 @@ export function Footer({ home = true }: {
         <div className="footer-social"><nav aria-label={t("Social media")}><h2 className="eyebrow">{t("Stay in the picture")}</h2>{socialLinks.map(link => <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">{t(link.label)} <span aria-hidden="true">↗</span></Link>)}</nav><LanguageSelector footer /></div>
       </div>
       <div className="footer-grand" aria-hidden="true">GRAND MALL</div>
-      <div className="footer-bottom"><p>© 2026 Grand Mall Batumi</p><span>{t("BATUMI, GEORGIA")}</span><nav aria-label={t("Legal")}>{legalLinks.map(link => <Link key={link.label} href={link.href}>{t(link.label)}</Link>)}</nav></div>
+      <div className="footer-bottom"><p>© 2026 Grand Mall Batumi</p><span>{t("Batumi, Georgia")}</span><nav aria-label={t("Legal")}>{legalLinks.map(link => <Link key={link.label} href={link.href}>{t(link.label)}</Link>)}</nav></div>
     </footer>);
 }

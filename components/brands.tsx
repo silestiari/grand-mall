@@ -36,7 +36,7 @@ export function Brands() {
               <Image src={homepageMedia.brands.src} alt={t(homepageMedia.brands.alt)} fill sizes="(max-width: 700px) 100vw, 55vw"/>
             </div>
             <figcaption>
-              <span>{t("FASHION / A NEW PERSPECTIVE")}</span>
+              <span>{t("Fashion / a new perspective")}</span>
             </figcaption>
           </figure>
           <div className="brand-selection">

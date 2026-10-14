@@ -9,9 +9,9 @@ export function PlanVisit() {
       <div className="visit-layout">
         <Reveal className="visit-information"><dl>{visitorInformation.fields.map(field => <div className="visit-fact" key={field.label}><dt className="eyebrow">{t(field.label)}</dt><dd>{t(field.value)}<small>{t(field.note)}</small></dd></div>)}<div className="visit-fact"><dt className="eyebrow">{t("Phone")}</dt><dd><Link href={visitorInformation.phoneHref}>{visitorInformation.phone}</Link></dd></div><div className="visit-fact"><dt className="eyebrow">{t("Email")}</dt><dd><Link href={`mailto:${visitorInformation.email}`}>{visitorInformation.email}</Link></dd></div></dl></Reveal>
         <div className="visit-location">
-          <div className="visit-location-top eyebrow"><span>{t("BLACK SEA COAST")}</span><span>{t("GEORGIA")}</span></div>
+          <div className="visit-location-top eyebrow"><span>{t("Black Sea coast")}</span><span>{t("Georgia")}</span></div>
           <div className="visit-location-center"><span className="location-marker" aria-hidden="true">+</span><p>GRAND MALL<small>BATUMI</small></p></div>
-          <div className="visit-location-bottom"><p>{t(visitorInformation.address)}</p><Link href={visitorInformation.directions} target="_blank" rel="noopener noreferrer">{t("OPEN DIRECTIONS ")}<span aria-hidden="true">↗</span></Link></div>
+          <div className="visit-location-bottom"><p>{t(visitorInformation.address)}</p><Link href={visitorInformation.directions} target="_blank" rel="noopener noreferrer">{t("Open directions ")}<span aria-hidden="true">↗</span></Link></div>
         </div>
       </div>
       <div className="visit-actions"><Link className="experience-link" href={visitorInformation.directions} target="_blank" rel="noopener noreferrer">{t("Get directions ")}<span aria-hidden="true">→</span></Link><Link className="experience-link" href={`mailto:${visitorInformation.email}`}>{t("Contact us ")}<span aria-hidden="true">→</span></Link></div>

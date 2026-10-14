@@ -4,17 +4,17 @@
 export const mallFacts = [
   {
     value: "≈100",
-    label: "BRANDED STORES",
+    label: "Branded stores",
     note: "Around 100 branded stores.",
   },
   {
     value: "5",
-    label: "FLOORS",
+    label: "Floors",
     note: "Four retail floors. One parking level.",
   },
   {
     value: "24K+",
-    label: "M² OF LEASABLE SPACE",
+    label: "m² of leasable space",
     note: "More than 24,000 m² of leasable area.",
   },
 ];

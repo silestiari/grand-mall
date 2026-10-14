@@ -22,7 +22,7 @@ export default async function NotFound() {
           <p className="eyebrow">GRAND MALL / 404</p>
           <h1 id="not-found-title">{t("PAGE NOT FOUND")}<span className="accent">.</span></h1>
           <p className={styles.description}>{t("This link may have changed. Choose a section below to continue exploring Grand Mall.")}</p>
-          <Link className={styles.home} href="/">{t("BACK TO HOME")}<span aria-hidden="true">↗</span></Link>
+          <Link className={styles.home} href="/">{t("Back to home")}<span aria-hidden="true">↗</span></Link>
         </div>
         <div className={styles.number} aria-hidden="true"><span>404</span><span className="eyebrow">BATUMI / GRAND MALL</span></div>
       </section>

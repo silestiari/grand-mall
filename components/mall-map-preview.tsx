@@ -27,7 +27,7 @@ export function MallMapPreview() {
           <Link className="experience-link" href="/map">{t("Open mall map ")}<span aria-hidden="true">→</span></Link>
         </Reveal>
         <div className="mall-level-display" aria-live="polite">
-          <div className="level-display-top eyebrow"><span>{t("LEVEL OVERVIEW")}</span><span>{t("BATUMI")}</span></div>
+          <div className="level-display-top eyebrow"><span>{t("Level overview")}</span><span>{t("Batumi")}</span></div>
           <div className="level-stack" aria-hidden="true">{[...mallLevels].reverse().map(item => <div className={item.id === level ? "level-layer selected" : "level-layer"} key={item.id}><span>{item.id === "-1" ? "−1" : item.id}</span><i /></div>)}</div>
           <div className="level-display-bottom"><p className="eyebrow">{t("Level ")}{level === "-1" ? "−1" : `0${level}`}</p><h3>{t(current.title)}</h3><p>{t(current.description)}</p></div>
         </div>

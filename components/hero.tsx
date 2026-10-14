@@ -20,7 +20,7 @@ export function Hero() {
       <div className="hero-shade"/>
       <div className="hero-content">
         <p className="eyebrow hero-eyebrow">
-          <span className="small-cross">+</span>{t("A NEW PERSPECTIVE ON BATUMI")}</p>
+          <span className="small-cross">+</span>{t("A new perspective on Batumi")}</p>
         <motion.h1 id="hero-title" className={t.locale === "en" ? undefined : "hero-headline-lines"} initial={{ opacity: 1 }} animate={reduce ? undefined : { opacity: [0.3, 1], y: [26, 0] }} transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}>
           {headlineLines.map(line => <span key={line}>{line.toLocaleUpperCase(t.locale)}</span>)}
         </motion.h1>

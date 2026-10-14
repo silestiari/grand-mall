@@ -44,7 +44,7 @@ export function EventSummary({ event, featured = false }: {
 }) {
     const t = useCopy();
     const href = `/events/${event.slug}`;
-    return <article className={featured ? "journal-featured" : "journal-story"}><Reveal>{event.image && <Link href={href} className="journal-story-image" aria-label={t(event.title)}><Image src={event.image.src} alt={t(event.image.alt)} fill sizes={featured ? "(max-width: 700px) 100vw, 70vw" : "(max-width: 700px) 100vw, 45vw"}/></Link>}<div className="journal-meta eyebrow"><span>{featured ? t("FEATURED EVENT") : t("EVENT")}</span><JournalDates startDate={event.startDate} endDate={event.endDate}/></div><h2><Link href={href}>{t(event.title)} <span aria-hidden="true">↗</span></Link></h2>{event.shortDescription && <p>{t(event.shortDescription)}</p>}<Link href={href} className="experience-link">{t("View event ")}<span aria-hidden="true">→</span></Link></Reveal></article>;
+    return <article className={featured ? "journal-featured" : "journal-story"}><Reveal>{event.image && <Link href={href} className="journal-story-image" aria-label={t(event.title)}><Image src={event.image.src} alt={t(event.image.alt)} fill sizes={featured ? "(max-width: 700px) 100vw, 70vw" : "(max-width: 700px) 100vw, 45vw"}/></Link>}<div className="journal-meta eyebrow"><span>{featured ? t("Featured event") : t("Event")}</span><JournalDates startDate={event.startDate} endDate={event.endDate}/></div><h2><Link href={href}>{t(event.title)} <span aria-hidden="true">↗</span></Link></h2>{event.shortDescription && <p>{t(event.shortDescription)}</p>}<Link href={href} className="experience-link">{t("View event ")}<span aria-hidden="true">→</span></Link></Reveal></article>;
 }
 export function OfferSummary({ offer }: {
     offer: MallOffer;
