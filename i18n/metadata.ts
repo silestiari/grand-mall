@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { getCopy } from "./server";
 import { routing } from "./routing";
 import { languageAlternates, localizedUrl, siteUrl } from "@/lib/site-url";
+// Missing pages get a title only: no canonical, alternates or share URL for a 404.
+export async function notFoundMetadata(locale: string, title = "Page not found — Grand Mall Batumi"): Promise<Metadata> {
+  const t = await getCopy(locale);
+  return { title: t(title), robots: { index: false, follow: true } };
+}
 export async function localizedMetadata(locale: string, pathname: string, title: string, description?: string): Promise<Metadata> {
   const t = await getCopy(locale);
   description ??= "Shopping, dining and entertainment at Grand Mall Batumi.";

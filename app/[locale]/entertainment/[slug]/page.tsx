@@ -1,4 +1,4 @@
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedMetadata, notFoundMetadata } from "@/i18n/metadata";
 import { getCopy } from "@/i18n/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -7,7 +7,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { EntertainmentDetail } from "@/components/entertainment-detail";
 export function generateStaticParams() { return entertainmentVenues.map(venue => ({ slug: venue.slug })); }
-export async function generateMetadata({ params }: PageProps<"/[locale]/entertainment/[slug]">): Promise<Metadata> { const { locale, slug } = await params; const venue = getEntertainmentVenue(slug); return localizedMetadata(locale, `/entertainment/${slug}`, venue ? `${venue.name} — Grand Mall Batumi` : "Place not found — Grand Mall Batumi", venue?.shortDescription); }
+export async function generateMetadata({ params }: PageProps<"/[locale]/entertainment/[slug]">): Promise<Metadata> { const { locale, slug } = await params; const venue = getEntertainmentVenue(slug); return venue ? localizedMetadata(locale, `/entertainment/${slug}`, `${venue.name} — Grand Mall Batumi`, venue.shortDescription) : notFoundMetadata(locale, "Place not found — Grand Mall Batumi"); }
 export default async function EntertainmentVenuePage({ params }: {
     params: Promise<{
         slug: string;

@@ -21,7 +21,7 @@ function FloorOverview({ floor, place }: {
     {position ? <g className="map-selected-marker" transform={`translate(${position.x} ${position.y})`}><circle r="18"/><circle className="map-marker-inner" r="5"/></g> : !plan && place ? <g aria-hidden="true"><rect className="map-selected-zone" x="288" y="215" width="184" height="130"/><text className="map-zone-label" x="380" y="288" textAnchor="middle">{floor}</text></g> : <text className="map-floor-number" x="380" y="291" textAnchor="middle" aria-hidden="true">{floor}</text>}
   </svg>;
 }
-function MapWorkspace({ initial }: {
+export function MapWorkspace({ initial }: {
     initial?: DirectoryPlace;
 }) {
     const t = useCopy();

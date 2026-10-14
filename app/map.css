@@ -60,7 +60,6 @@
 .map-selection section > p { color: var(--muted); font-size: 12px; margin: 16px 0 25px; }
 .map-selection-empty > .eyebrow { color: var(--accent); }
 .map-selection-empty > p:last-child { color: var(--muted); font-size: 14px; margin-top: 14px; line-height: 1.5; }
-.map-loading { min-height: 650px; color: var(--accent); }
 @media (max-width: 1100px) {
   .map-workspace { grid-template-columns: minmax(0,1fr) minmax(0,1.6fr); gap: 26px; }
   .map-sidebar { padding-right: 20px; }

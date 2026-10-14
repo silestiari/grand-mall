@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCopy } from "@/i18n/server";
+import { notFoundMetadata } from "@/i18n/metadata";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/[...rest]">): Promise<Metadata> {
-  const t = await getCopy((await params).locale);
-  return { title: t("Page not found — Grand Mall Batumi"), robots: { index: false, follow: true } };
+  return notFoundMetadata((await params).locale);
 }
 
 export default function CatchAllPage() {

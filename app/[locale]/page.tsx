@@ -16,6 +16,11 @@ import { MallMapPreview } from "@/components/mall-map-preview";
 import { PlanVisit } from "@/components/plan-visit";
 import { SocialLifestyle } from "@/components/social-lifestyle";
 import { Footer } from "@/components/footer";
+import { localizedMetadata } from "@/i18n/metadata";
+export async function generateMetadata({ params }: PageProps<"/[locale]">) {
+  const { locale } = await params;
+  return localizedMetadata(locale, "/", "Grand Mall Batumi — Batumi Starts Here", "Discover shopping, dining and entertainment at Grand Mall Batumi. International fashion and everyday essentials on Georgia’s Black Sea coast.");
+}
 export default function Home() {
     const t = useCopy();
     return (<>
