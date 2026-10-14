@@ -34,68 +34,72 @@
       "sourceSha256": "b4cc64b979f4cda294ef0d1e354d88f8b4e16acebae97242df3ec8d1983136a1"
     },
     {
-      "file": "/images/official/cavea.webp",
-      "source": "https://grandmall.com.ge/images/shops_banners/92-d18002859d89ec7da7ab2451dff1d0f2.jpeg",
-      "retrieved": "2026-10-06",
+      "file": "/images/official/cavea-cinema.webp",
+      "source": "https://grandmall.com.ge/images/shops/92-brand_hero_image-2fa335fc885ac4700d44b565662f3e2c.png",
+      "record": "https://grandmall.com.ge/app/GetShopData.php?id=92",
+      "retrieved": "2026-10-14",
       "kind": "promotional image",
       "originalDimensions": [
-        576,
-        384
+        1024,
+        941
       ],
       "dimensions": [
-        576,
-        384
+        1024,
+        941
       ],
-      "bytes": 13460,
-      "sourceSha256": "561a837dcdb3acafccf9d345ca85f5cf089e534084212ad19cd7a095c2430359"
+      "bytes": 92736,
+      "sourceSha256": "c4a34d41a35d2d105986f7436c2b2c36fea937842b0859f9ac8ed040f174ce33"
     },
     {
-      "file": "/images/official/bowling.webp",
-      "source": "https://grandmall.com.ge/images/shops_banners/47-61a45ab20cb990b20c19f23bfffc5ec5.jpeg",
-      "retrieved": "2026-10-06",
+      "file": "/images/official/bowling-balls.webp",
+      "source": "https://grandmall.com.ge/images/shops/47-brand_hero_image-aaeaac9888d76d1cbe85c2544709ff35.png",
+      "record": "https://grandmall.com.ge/app/GetShopData.php?id=47",
+      "retrieved": "2026-10-14",
       "kind": "promotional image",
       "originalDimensions": [
-        604,
-        453
+        1024,
+        941
       ],
       "dimensions": [
-        604,
-        453
+        1024,
+        941
       ],
-      "bytes": 11158,
-      "sourceSha256": "99dd0781fe9db628707274b0b8332054ca2c5f84d6d450e86b036cfd02b242d9"
+      "bytes": 89974,
+      "sourceSha256": "9aab692b51e389e5d3c1e7b18d446c43eb3cf5c2576bfa661f4fdd2d2933c621"
     },
     {
-      "file": "/images/official/oktopus.webp",
-      "source": "https://grandmall.com.ge/images/shops_banners/octopus.webp",
-      "retrieved": "2026-10-06",
-      "kind": "promotional banner",
+      "file": "/images/official/oktopus-runner.webp",
+      "source": "https://grandmall.com.ge/images/shops/74-brand_hero_image-af13edb501010599a5986ad67777e729.png",
+      "record": "https://grandmall.com.ge/app/GetShopData.php?id=74",
+      "retrieved": "2026-10-14",
+      "kind": "promotional image",
       "originalDimensions": [
-        1137,
-        360
+        1024,
+        941
       ],
       "dimensions": [
-        1137,
-        360
+        1024,
+        941
       ],
-      "bytes": 37236,
-      "sourceSha256": "5581d18e6ddd4b7a7feba1faa60d014a1731af6436b3021e4a5cee0482a1edfd"
+      "bytes": 34162,
+      "sourceSha256": "1787675dc31a9afbcc6f4e30c8fb86afb554e0067a5853961668e2db027c10c0"
     },
     {
-      "file": "/images/official/wonderland.webp",
-      "source": "https://grandmall.com.ge/images/shops_banners/wonderland.webp",
-      "retrieved": "2026-10-06",
-      "kind": "promotional banner",
+      "file": "/images/official/wonderland-arcade.webp",
+      "source": "https://grandmall.com.ge/images/shops/38-brand_hero_image-36f95576c8e2c8e83a2d642b91a8a8d6.png",
+      "record": "https://grandmall.com.ge/app/GetShopData.php?id=38",
+      "retrieved": "2026-10-14",
+      "kind": "promotional image",
       "originalDimensions": [
-        1137,
-        360
+        1024,
+        941
       ],
       "dimensions": [
-        1137,
-        360
+        1024,
+        941
       ],
-      "bytes": 37058,
-      "sourceSha256": "f26d4824219bf24c4aa737741760f4108cb752a7f6990cc2d2c60834d523efd8"
+      "bytes": 78048,
+      "sourceSha256": "65f84c6625d300b428bb0000d5c9a9133650d55b3703f94a13d08203176cc978"
     },
     {
       "file": "/images/dining/big-chefs.webp",

@@ -8,8 +8,8 @@ export const officialMedia = {
   restaurant: { src: "/images/dining/big-chefs.webp", alt: "Food featured in the Big Chefs promotional image" },
   cafe: { src: "/images/official/oliva-cafe.webp", alt: "Oliva Cafe interior featured on the Grand Mall website" },
   coffee: { src: "/images/dining/dunkin.webp", alt: "Dunkin drinks and doughnuts featured on the Grand Mall website" },
-  cinema: { src: "/images/official/cavea.webp", alt: "CAVEA popcorn cartons in the official cinema promotional image" },
-  bowling: { src: "/images/official/bowling.webp", alt: "Bowling pins and ball in the official bowling promotional image" },
-  fitness: { src: "/images/official/oktopus.webp", alt: "Oktopus Fitness promotional banner with athletes" },
-  wonderland: { src: "/images/official/wonderland.webp", alt: "Children wearing superhero masks in the official Wonderland banner" },
+  cinema: { src: "/images/official/cavea-cinema.webp", alt: "A child with popcorn in a cinema seat, from the official CAVEA page" },
+  bowling: { src: "/images/official/bowling-balls.webp", alt: "Bowling balls on a rack, from the official bowling page" },
+  fitness: { src: "/images/official/oktopus-runner.webp", alt: "An athlete running, from the official Oktopus Fitness page" },
+  wonderland: { src: "/images/official/wonderland-arcade.webp", alt: "Children playing at an arcade machine, from the official Wonderland page" },
 };

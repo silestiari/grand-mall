@@ -488,10 +488,6 @@
     "m943063d5": "Food featured in the Big Chefs promotional image",
     "m80fb85c4": "Oliva Cafe interior featured on the Grand Mall website",
     "mdd9c0564": "Dunkin drinks and doughnuts featured on the Grand Mall website",
-    "me49c8313": "CAVEA popcorn cartons in the official cinema promotional image",
-    "me16e085d": "Bowling pins and ball in the official bowling promotional image",
-    "mbdf255e4": "Oktopus Fitness promotional banner with athletes",
-    "mc8650e70": "Children wearing superhero masks in the official Wonderland banner",
     "mf3b34817": "PAGE NOT FOUND",
     "m7a4c4bea": "This link may have changed. Choose a section below to continue exploring Grand Mall.",
     "m2ff15542": "BACK TO HOME",
@@ -587,7 +583,11 @@
     "m6b108870": "On your way",
     "m517bafac": "Arriving by car",
     "m8bbc2251": "A visit for everyone",
-    "mc78a8ab3": "We’re here to help"
+    "mc78a8ab3": "We’re here to help",
+    "m30c23226": "A child with popcorn in a cinema seat, from the official CAVEA page",
+    "m1b8d434f": "Bowling balls on a rack, from the official bowling page",
+    "mfb5f1a76": "An athlete running, from the official Oktopus Fitness page",
+    "me4e7332": "Children playing at an arcade machine, from the official Wonderland page"
   },
   "counts": {
     "store": [
