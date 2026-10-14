@@ -8,7 +8,7 @@ export function ShopEatPlay() {
     return (<section id="shop-eat-play" className="day-sequence" aria-label={t("Shop, eat and play at Grand Mall")}>
       <section className="day-shop" aria-labelledby="shop-title">
         <Reveal className="day-shop-copy">
-          <p className="eyebrow day-label">{t("04 / YOUR DAY, YOUR WAY")}</p>
+          <p className="eyebrow day-label">{t("YOUR DAY, YOUR WAY")}</p>
           <h2 className="day-title" id="shop-title">{t("SHOP")}<span>.</span></h2>
           <p className="day-description">{t("International fashion, everyday essentials and new discoveries.")}</p>
           <Link className="experience-link" href="/stores">{t("EXPLORE STORES ")}<span aria-hidden="true">→</span></Link>

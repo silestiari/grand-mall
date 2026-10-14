@@ -6,7 +6,7 @@ import { Reveal } from "./reveal";
 export function Offers() {
     const t = useCopy();
     return (<section id="offers" className="offers-section section-padding" aria-labelledby="offers-title">
-      <Reveal><div className="section-topline"><p className="eyebrow">{t("08 / A CLOSER LOOK")}</p><span className="eyebrow">{t("THE BRAND EDIT")}</span></div><h2 id="offers-title" className="finish-title">{t("WHAT\u2019S NEW")}<br />{t("BRAND EDIT")}<span className="accent">.</span></h2></Reveal>
+      <Reveal><div className="section-topline"><p className="eyebrow">{t("A CLOSER LOOK")}</p><span className="eyebrow">{t("THE BRAND EDIT")}</span></div><h2 id="offers-title" className="finish-title">{t("WHAT\u2019S NEW")}<br />{t("BRAND EDIT")}<span className="accent">.</span></h2></Reveal>
       <div className="offers-editorial">
         {offers.map((offer, index) => <Reveal className={`offer-story offer-story-${index}`} key={offer.id}>
           <Link href={offer.href} target="_blank" rel="noopener noreferrer" className="story-image-link" aria-label={t("Explore {value0}", { value0: offer.brand })}><ImmersiveImage {...completionMedia[offer.image]} className="offer-image" sizes="(max-width: 700px) 100vw, 48vw"/></Link>

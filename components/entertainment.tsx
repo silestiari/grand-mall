@@ -9,7 +9,7 @@ export function Entertainment() {
     return (<section id="entertainment" className="entertainment-section section-padding" aria-labelledby="entertainment-title">
       <Reveal>
         <div className="section-topline">
-          <p className="eyebrow">{t("06 / CHANGE THE PACE")}</p>
+          <p className="eyebrow">{t("CHANGE THE PACE")}</p>
           <span className="eyebrow">{t("MAKE ROOM FOR SOMETHING ELSE")}</span>
         </div>
         <div className="entertainment-intro">
@@ -22,7 +22,7 @@ export function Entertainment() {
             <ImmersiveImage {...experienceMedia[venue.image]} className="entertainment-image" sizes={index === 0 ? "(max-width: 1100px) 160vh, 100vw" : "(max-width: 700px) 90vh, 58vw"}/>
             {index === 0 && <div className="cinema-shade"/>}
             <Reveal className="entertainment-copy">
-              <p className="eyebrow"><span className="experience-number">0{index + 1}</span> / {t(venue.category)}</p>
+              <p className="eyebrow">{t(venue.category)}</p>
               <h3 id={`experience-${venue.slug}`}>{venue.name}</h3>
               <p className="experience-heading">{t(venue.heading)}</p>
               <p className="experience-description">{t(venue.description)}</p>
@@ -33,7 +33,7 @@ export function Entertainment() {
           <ImmersiveImage {...experienceMedia.wonderland} className="family-image" sizes="(max-width: 700px) 75vh, 58vw"/>
           <div className="family-content">
             <Reveal className="family-heading">
-              <p className="eyebrow"><span className="experience-number">04</span>{t(" / KIDS ENTERTAINMENT")}</p>
+              <p className="eyebrow">{t("KIDS ENTERTAINMENT")}</p>
               <h3 id="family-title">{t("Wonderland")}</h3>
             </Reveal>
             <Reveal className="family-copy">

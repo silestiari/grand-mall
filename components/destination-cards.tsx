@@ -12,10 +12,9 @@ const destinations = [
 export function DestinationCards() {
   const t = useCopy();
   return <nav className="destination-cards" aria-label={t("Explore Grand Mall")}>
-    {destinations.map((item, index) => <Link href={item.href} className={`destination-card destination-${item.tone}`} key={item.href}>
+    {destinations.map(item => <Link href={item.href} className={`destination-card destination-${item.tone}`} key={item.href}>
       <Image src={item.media.src} alt={t(item.media.alt)} fill sizes="(max-width: 700px) 100vw, 33vw" />
       <span className="destination-wash" aria-hidden="true" />
-      <span className="destination-number eyebrow" aria-hidden="true">0{index + 1}</span>
       <span className="destination-label">{t(item.title)}<span className="destination-arrow" aria-hidden="true">↗</span></span>
     </Link>)}
   </nav>;

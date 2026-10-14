@@ -15,7 +15,7 @@ export function Brands() {
     return (<section className="brands section-padding" id="brands" aria-labelledby="brands-title">
       <Reveal>
         <div className="section-topline">
-          <p className="eyebrow">{t("02 / FIND YOUR FAVOURITES")}</p>
+          <p className="eyebrow">{t("FIND YOUR FAVOURITES")}</p>
           <span className="eyebrow">{t("STYLE, IN EVERY DIRECTION")}</span>
         </div>
         <div className="brands-intro">

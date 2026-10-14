@@ -9,7 +9,7 @@ export function ArchitecturalBreak() {
       <ImmersiveImage {...experienceMedia.atrium} className="architecture-visual"/>
       <div className="architecture-shade"/>
       <div className="architecture-content">
-        <p className="eyebrow">{t("03 / A PLACE FOR YOUR EVERYDAY")}</p>
+        <p className="eyebrow">{t("A PLACE FOR YOUR EVERYDAY")}</p>
         <Reveal>
           <h2 id="architecture-title">{t("EVERYTHING.")}<br />{t("IN ONE PLACE.")}</h2>
         </Reveal>

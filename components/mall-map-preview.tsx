@@ -14,7 +14,7 @@ export function MallMapPreview() {
     const searchTerm = query.trim().toLowerCase();
     const matches = searchTerm ? searchDirectory(query, t) : [];
     return (<section id="mall-map" className="mall-map-section section-padding" aria-labelledby="mall-map-title">
-      <div className="section-topline"><p className="eyebrow">{t("10 / GET YOUR BEARINGS")}</p><span className="eyebrow">{t("FIVE LEVELS. ONE GRAND MALL.")}</span></div>
+      <div className="section-topline"><p className="eyebrow">{t("GET YOUR BEARINGS")}</p><span className="eyebrow">{t("FIVE LEVELS. ONE GRAND MALL.")}</span></div>
       <div className="mall-map-layout">
         <Reveal className="mall-map-copy">
           <h2 id="mall-map-title" className="finish-title">{t("FIND")}<br />{t("YOUR WAY")}<span className="accent">.</span></h2>

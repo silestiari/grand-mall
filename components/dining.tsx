@@ -9,7 +9,7 @@ export function Dining() {
     return (<section id="dining" className="dining-section section-padding" aria-labelledby="dining-title">
       <Reveal>
         <div className="section-topline">
-          <p className="eyebrow">{t("05 / AT THE TABLE")}</p>
+          <p className="eyebrow">{t("AT THE TABLE")}</p>
           <span className="eyebrow">{t("GOOD COMPANY. TIME WELL SPENT.")}</span>
         </div>
         <h2 id="dining-title" className="dining-title">{t("TAKE A BREAK.")}<br />{t("STAY A LITTLE")}<br className="dining-mobile-break"/>{t(" LONGER")}<span className="accent">.</span></h2>
