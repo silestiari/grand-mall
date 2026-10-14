@@ -15,7 +15,7 @@ export function Hero() {
       <div className="hero-image">
         {homepageMedia.hero.kind === "video" ? (<video autoPlay={!reduce} muted loop playsInline poster={homepageMedia.hero.poster} aria-hidden="true">
             <source src={homepageMedia.hero.src}/>
-          </video>) : (<Image src={homepageMedia.hero.src} alt={t(homepageMedia.hero.alt)} fill preload sizes="100vw"/>)}
+          </video>) : (<Image src={homepageMedia.hero.src} alt={t(homepageMedia.hero.alt)} fill fetchPriority="high" sizes="100vw"/>)}
       </div>
       <div className="hero-shade"/>
       <div className="hero-content">
