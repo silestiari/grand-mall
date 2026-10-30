@@ -1,185 +1,102 @@
-﻿# Grand Mall Batumi
+<div align="center">
 
-**English QA portfolio case study:** [Grand Mall QA Case Study](docs/portfolio-qa-case-study.md).
+<img src="docs/readme/banner.jpg" width="100%" alt="Grand Mall Batumi — trilingual shopping-mall website"/>
 
-Финальная проверка перед публикацией: [отчёт от 6 октября 2026 года](docs/prelaunch-qa-final.md). Этот отчёт содержит актуальные результаты и ограничения; более ранние проверки ниже описывают этапы разработки.
+<a href="https://grand-mall-three.vercel.app"><img src="https://img.shields.io/badge/Live_site-FF5FA2?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+<a href="docs/portfolio-qa-case-study.md"><img src="https://img.shields.io/badge/QA_case_study-E0307E?style=for-the-badge&logo=checkmarx&logoColor=white"/></a>
+<a href="https://github.com/silestiari"><img src="https://img.shields.io/badge/Made_by-Sofia_Stetsiuk-C25BA5?style=for-the-badge&logo=github&logoColor=white"/></a>
 
-## Языки сайта
+<img src="https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
+<img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+<img src="https://img.shields.io/badge/next--intl-EN_·_RU_·_KA-FF8DC0?style=flat-square"/>
+<img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white"/>
 
-Локализация использует next-intl и общие шаблоны в `app/[locale]`. EN — `en`, RU — `ru`, GE — `ka`; `/` перенаправляет на `/en`. Языковое меню сохраняет страницу, slug, параметры URL и якорь. Внутренние ссылки используют `i18n/navigation.ts`.
+</div>
 
-Словари находятся в `messages/en.json`, `messages/ru.json`, `messages/ka.json`. Helpers `i18n/copy.ts` и `i18n/server.ts` переводят исходный английский текст через стабильный `copyKey` из `i18n/translate.ts`. Новый контент требует новых записей в словарях; отсутствующий перевод возвращает английский текст. Названия брендов и slug не переводятся. Данные общие, фильтры используют исходные категории, переводы меняют только отображаемые подписи.
+> 💗 An independent portfolio project built alone in Sep–Oct 2026. It is **not** the official website of Grand Mall Batumi.
 
-Конфигурация: `i18n/routing.ts`, `i18n/request.ts`, `proxy.ts`. В `next.config.ts` стандартный alias `next-intl/config` подключает request config без ненужного плагина автоматического извлечения сообщений и его дополнительного нативного SWC extractor на Windows.
+<p align="center">⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ &nbsp; =^･ω･^= &nbsp; ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</p>
 
-Строки homepage hero хранятся отдельным массивом `homepageHero.lines` в каждом словаре и читаются через next-intl. RU содержит три строки, EN и KA — две. Для RU/KA каждый span — отдельная flex-строка с locale-specific line-height и row-gap в `app/i18n.css`; переносы не зависят от случайного wrapping внутри перевода.
+## 🛍️ About
 
-SEO: `i18n/metadata.ts` задаёт переведённые title/description, canonical, hreflang EN/RU/KA и x-default. Production origin задаётся через `NEXT_PUBLIC_SITE_URL`; по умолчанию — `https://grandmall.com.ge`. Шрифты Noto Sans и Noto Sans Georgian поддерживают кириллицу и грузинский. Точечные адаптивные правила находятся в `app/i18n.css`.
+A responsive website for a shopping mall in Batumi, Georgia, in three languages: English, Russian and Georgian. Visitors can search stores, filter by floor and category, find a place on the mall map and plan their visit. I designed, built and tested it: from page structure and copy to localization and a documented pre-launch QA pass.
 
-Главная страница Grand Mall Batumi завершена: шапка, hero, информационная строка, статистика, бренды, архитектурный переход, SHOP / EAT / PLAY, Dining, Entertainment, Events, Offers, Batumi Story, Mall Map Preview, Plan Your Visit, Lifestyle и большой footer. Добавлены `/stores`, `/dining`, `/entertainment` и страницы отдельных магазинов и площадок. Также готовы `/map`, `/visit`, `/events`, `/offers` и reusable template `/events/[slug]`.
+## 📸 Screenshots
 
-## Как запустить
+<table>
+<tr>
+<td colspan="2"><img src="docs/readme/home-desktop-en.webp" alt="Homepage, desktop, English"/></td>
+<td rowspan="2" width="24%"><img src="docs/readme/home-mobile-ka.webp" alt="Homepage, mobile, Georgian"/></td>
+</tr>
+<tr>
+<td><img src="docs/readme/search-dialog-desktop.webp" alt="Global search dialog"/></td>
+<td><img src="docs/readme/map-desktop.webp" alt="Mall map"/></td>
+</tr>
+<tr>
+<td><img src="docs/readme/home-desktop-ru.webp" alt="Homepage, desktop, Russian"/></td>
+<td><img src="docs/readme/visit-desktop.webp" alt="Visit page, desktop"/></td>
+<td><img src="docs/readme/visit-mobile-ru.webp" alt="Visit page, mobile, Russian"/></td>
+</tr>
+</table>
 
-Откройте терминал в папке проекта. Команда запускает локальный сервер — программу, которая показывает сайт в браузере:
+## ✨ Features
 
-```powershell
-npm.cmd run dev
+- 🔎 **Global search** across stores, dining and entertainment, case-insensitive, with an accessible results status
+- 🏷️ **Store & dining directory** with floor and category filters that stay in the URL, so filtered views can be shared
+- 🗺️ **Interactive mall map**: pick a place, the floor switches automatically; "Find on map" deep links from every store page
+- 🌍 **EN / RU / KA**: the language switcher keeps the current page, slug, query and anchor
+- 🌙 **Light & dark theme**, skip link, visible focus, reduced-motion support
+- 🔗 **SEO**: localized metadata, canonical and hreflang tags, Open Graph, sitemap and robots
+- 📄 **Honest data only**: no invented stores, hours or discounts; events and offers stay empty until verified
+
+## 🧪 QA
+
+Testing was part of the project from day one. The [final pre-launch QA report](docs/prelaunch-qa-final.md) (6 Oct 2026) records:
+
+| | |
+|---|---|
+| 🖱️ Interaction checks (search, filters, map, navigation) | **151** |
+| ♿ Axe accessibility checks on key pages | **48** |
+| 🔗 Internal links returning HTTP 200 | **321** |
+| 📱 Page × viewport combinations in 3 languages | **192** |
+| 📏 Narrow-mobile checks at 320 px | **57** |
+
+Plus Playwright end-to-end tests for critical user journeys in [`tests/`](tests/). Test scenarios, coverage areas and known limitations are in the **[QA case study](docs/portfolio-qa-case-study.md)**.
+
+## 🚀 Run locally
+
+```bash
+npm install
+npm run dev          # http://localhost:3000
 ```
 
-Откройте http://localhost:3000. Если Node.js не найден, перезапустите VS Code: Node.js 24 LTS установлен в пользовательскую папку и добавлен в PATH.
+| Command | What it does |
+|---|---|
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript check |
+| `npm run build` | Production build |
+| `npm test` | Playwright end-to-end tests |
 
-Каталог магазинов: http://localhost:3000/stores. Пример страницы бренда: http://localhost:3000/stores/zara.
+Developer notes (in Russian): [docs/DEVELOPMENT.ru.md](docs/DEVELOPMENT.ru.md)
 
-## Каталог Stores
+## 📁 Structure
 
-Страница поддерживает поиск по названию, совместные фильтры категории и этажа, актуальный счётчик результатов и сброс. Названия отсортированы по алфавиту. На телефоне категории прокручиваются горизонтально, этаж и категория показаны под названием магазина. Активная категория выделена цветом, подчёркиванием и `aria-pressed`.
-
-Основные новые файлы:
-
-- `data/stores.ts` — 80 записей магазинов и сервисов из [официального retail-каталога](https://grandmall.com.ge/app/GetShops.php?Type=1&Cats=), снимок на 4 октября 2026 года. Этажи и часы взяты из отдельных официальных записей `GetShopData.php?id=…`; источник сохранён в каждом объекте.
-- `app/[locale]/stores/page.tsx` — страница каталога.
-- `app/[locale]/stores/[slug]/page.tsx` — маршруты брендов, метаданные и корректный 404 для неизвестного slug.
-- `components/store-directory.tsx` — поиск, фильтры и список.
-- `components/store-detail.tsx` — общий шаблон магазина; пустые поля скрываются.
-- `public/images/stores/` — четыре официальных брендовых изображения в WebP; [источники](public/images/stores/SOURCES.md).
-
-Каталог включает все retail-записи опубликованного списка, в том числе MODI с локальным slug `modi`; Luca Polare исключён как заведение питания. Это количество записей каталога, а не замена общей приблизительной статистики homepage. Данные статические: изменения официального каталога потребуется переносить в файл или подключить CMS.
-
-Категории сведены к удобным группам интерфейса; дополнительно есть Books для книжного магазина. В фильтре сохранены подтверждённые уровни −1 и 1–4. В текущем retail-снимке магазины указаны только на 1–3: выбор −1 или 4 показывает корректное пустое состояние. Магазины не распределяются по этажам искусственно.
-
-Все 80 магазинов имеют этаж; часы заполнены у 68, внешняя ссылка — у 75. Изображения и короткие описания пока добавлены только ZARA, Massimo Dutti, MANGO и Calvin Klein. Логотипы и индивидуальные телефоны не подставлены: почти все опубликованные номера совпадают с общим телефоном молла, поэтому контакт команды оставлен отдельно. Для остальных изображение или описание можно добавить позже без изменения шаблона. FIND ON MAP открывает локальную карту с выбранным магазином и его этажом; точные координаты пока не подключены.
-
-При финальном QA все 80 записей повторно сверены с актуальными официальными данными: наличие в каталоге, этаж и опубликованный сайт совпадают. Категории Kids и Sport подтверждены описаниями брендов. Проверены одинаковые результаты для `zara`, `ZARA`, `Zara`, частичный запрос `calv`, сочетания Electronics + Floor 3 и Fashion + Floor 1, полный сброс и условное отображение полей страниц магазинов. Нефункциональная стрелка в поле поиска удалена; поиск работает сразу при вводе.
-
-Внешние адреса подтверждены источником, но их доступность зависит от сторонних сайтов: часть ограничивает автоматические запросы, GMT на момент проверки возвращает HTTP 503. Это не ошибка локального маршрута магазина; все 80 страниц `/stores/[slug]` доступны.
-
-Официальные URL некоторых записей исторические: `giordano` сейчас содержит название Adidas, `tefal` — Shavdia, `apple-city` — Icity. Сохраняются исходные идентификаторы и текущие названия из официальных записей. Значения не угадываются по slug.
-
-Stores, Dining и Entertainment в header/footer ведут на свои страницы. EXPLORE STORES / EXPLORE ALL STORES и EXPLORE DINING на homepage открывают соответствующие страницы. Search в header и Mall Map используют общий каталог Stores, Dining и Entertainment: поиск по имени, типу и категории, подтверждённый этаж и ссылка на соответствующую detail page. Выбор на карте и deep links синхронно обновляют этаж, визуализацию и selected panel. Events, Offers и Visit открывают соответствующие локальные страницы. Визуальная композиция homepage сохранена.
-
-Проверены 1440, 1280, 1024, 768, 430, 390, 375 и 320 px: поиск, комбинации фильтров, пустое состояние, сброс, счётчик, детали бренда, отсутствие переполнения и ошибки консоли. Все 80 локальных страниц возвращают HTTP 200; неизвестный бренд — HTTP 404. Автоматическая проверка доступности каталога проходит, lint, TypeScript и production build — без ошибок.
-
-## Страница Dining
-
-Открыть: http://localhost:3000/dining. Примеры: `/dining/big-chefs`, `/dining/oliva-caf`, `/dining/dunkin`. Созданы все 15 страниц заведений и корректный 404 для неизвестного slug.
-
-Страница включает атмосферный hero, асимметричный intro, три featured-заведения и практический список с поиском и категориями. Поиск работает сразу, без учёта регистра и по части названия; совместим с категориями. Счётчик обновляется, CLEAR FILTERS сбрасывает оба условия. Визуальная система homepage и Stores сохранена; изменены только нужные ссылки и определение активного пункта header.
-
-`data/dining.ts` содержит Big Chefs, Oliva Café, Dunkin, M.O.K, Wendy’s, Pizza Capri, McDonald’s, Tokyo House, KFC, SUBWAY, Pizza Hut, Tolia, Pirosmani Express, Usta Dönerci и Luca Polare. Источники: [официальный Dining API](https://grandmall.com.ge/app/GetShops.php?Type=2&Cats=) и отдельные записи `GetShopData.php?id=…`, сохранённые в каждом объекте. Проверено 4 октября 2026 года.
-
-Ошибки источника обработаны: Gloria Jeans исключён, потому что запись описывает магазин одежды. Luca Polare опубликован в retail API, но имеет официальную категорию food и описание gelato/coffee, поэтому включён в Dining. Tolia сохраняет исторический slug `the-khachapuri`. Restaurants, Cafés, Fast Food и Desserts — группы интерфейса по подтверждённым описаниям, а не заявления об официальной классификации.
-
-Этажи заполнены у всех 15 заведений, часы — у 12, сайт — у 13. У McDonald’s, Pirosmani Express и Luca Polare часы не опубликованы. У Dunkin нет сайта; ошибочная ссылка Big Chefs на Wendy’s не используется. Индивидуальные телефоны не указаны, потому что источник повторяет общий номер молла. Пустые поля и кнопки скрываются; шаблон работает и без изображения.
-
-Featured использует отдельные официальные изображения Big Chefs, Oliva Café и Dunkin. Hero и две intro-фотографии — новые иллюстративные assets, а не реальные фотографии заведений Grand Mall. Их легко заменить в `lib/dining-media.ts`; происхождение изображений описано в `public/images/dining/SOURCES.md`. FIND ON MAP открывает локальную карту с выбранным заведением и его этажом.
-
-Финальный polish Dining: hero заменён на отдельный `atmosphere-family-hero.webp` с едой, кофе, десертом и водой; для Oliva Café на главной странице Dining и в деталях используется официальный `oliva-dessert.webp`. Типографика и композиция сохранены. Все 15 записей повторно сверены с официальным food-каталогом и отдельными источниками; заполненные этажи, часы и сайты совпадают, категории основаны на описаниях. EXPLORE DINING ведёт на `#dining-directory`, плавная прокрутка учитывает высоту header и отключается при reduced motion.
-
-QA: проверены 1440, 1280, 1024, 768, 430, 390, 375 и 320 px, все категории, поиск `big` / `BIG` / `Big`, совместная фильтрация, пустые результаты и сброс. Все 15 detail routes возвращают HTTP 200, неизвестный — 404. Переполнения, ошибок консоли и нарушений в автоматической проверке axe нет. Homepage сохраняет 14 секций; Stores — 80 записей. Lint, TypeScript и production build проходят.
-
-## Страница Entertainment
-
-Открыть: http://localhost:3000/entertainment. Созданы `/entertainment/cavea`, `/entertainment/bowling`, `/entertainment/oktopus`, `/entertainment/wonderland`; неизвестный slug возвращает 404.
-
-Страница использует тёмный cinematic hero, светлый editorial intro, четыре самостоятельные асимметричные секции и компактную навигацию FIND YOUR EXPERIENCE. Hero CTA плавно прокручивает к CHOOSE YOUR PACE, учитывает sticky header и reduced motion. Существующий header сохранён; Entertainment в навигации и PLAY CTA теперь открывают новую страницу, а ссылки площадок на homepage — соответствующие детали.
-
-`data/entertainment.ts` содержит только четыре площадки [официального entertainment-каталога](https://grandmall.com.ge/app/GetShops.php?Type=3&Cats=): CAVEA, Bowling, Oktopus Fitness, Wonderland. Проверено 4 октября 2026 года; индивидуальный источник сохранён в каждом объекте. CAVEA, Bowling и Wonderland: этаж 4, часы 10:00–22:00; Oktopus: этаж 3, часы не опубликованы. Подтверждены сайты CAVEA и Oktopus. Для остальных Visit Website скрыт: ссылка Bowling указывает на Wonderland, ссылка Wonderland открывает Facebook search, а не отдельный сайт площадки. Индивидуальные телефоны отсутствуют, потому что записи повторяют общий номер молла. В описании Wonderland не переносится ошибочное имя Crazy Game Fun и не заявляются конкретные аттракционы. Все незаполненные поля необязательны и скрываются.
-
-Детали сохраняют editorial layout: крупное имя, изображение, короткое описание, практическая информация и FIND ON MAP. Кнопка открывает локальную карту с выбранной площадкой и её этажом. Без изображения шаблон остаётся текстовой композицией без сломанной картинки.
-
-Фотография Bowling опубликована на официальной странице. Hero, CAVEA, Fitness и Wonderland — новые иллюстративные assets, не реальные фотографии площадок Grand Mall; материалы homepage не заменены. Пути и alt легко обновляются в `lib/entertainment-media.ts` и `data/entertainment.ts`. Источники и prompts imagegen: `public/images/entertainment/SOURCES.md`. Кадры фильмов, movie posters и cartoon assets не используются.
-
-QA: проверены desktop, tablet и mobile до 320 px, четыре detail pages, условное отображение полей, изображения, контраст, фокус, клавиатура, reduced motion, якорь и ссылки с homepage. Существующие 14 секций homepage, 80 записей Stores и 15 записей Dining сохранены. Lint, TypeScript и production build проходят.
-
-## Mall Map
-
-Открыть: http://localhost:3000/map. Общий поиск объединяет 99 существующих записей: 80 из Stores, 15 из Dining и 4 из Entertainment. `lib/directory.ts` строит нормализованный каталог без отдельных копий данных. Services показывается для JPC Pharmacy из существующего dataset; новые сервисы не добавляются. Поиск не учитывает регистр и диакритику, поддерживает часть названия. Категории и поиск работают вместе.
-
-Этажи 1–4 вычисляются из заполненных полей каталогов. Изначально поиск идёт по всем этажам; ручной выбор уровня ограничивает результаты этим этажом, SEARCH ALL FLOORS снимает ограничение. Выбор объекта автоматически устанавливает его этаж и открывает панель с VIEW DETAILS. Смена этажа сбрасывает объект с другого уровня; CLOSE закрывает панель. На мобильном поиск и категории находятся сверху, затем этажи, компактный раскрываемый список, схема и панель.
-
-Deep link: `/map?type=store&slug=zara`, `/map?type=dining&slug=big-chefs`, `/map?type=entertainment&slug=oktopus-fitness`. FIND ON MAP на всех detail templates передаёт тип и slug. Header, footer, homepage preview, Quick Info и каталоги теперь открывают локальную `/map`. Поиск homepage preview тоже использует полный объединённый каталог.
-
-Текущая схема — интерактивный prototype, не точный план помещений. Это явно указано в UI; блоки не подписаны реальными брендами. Подсвечивается только концептуальная зона выбранного этажа, без утверждения о позиции объекта. На официальной карте есть схемы и координаты, но её legacy IDs и часть названий не совпадают с актуальными каталогами. `lib/map-data.ts` отделяет будущие проверенные планы (`src`, `viewBox`, `source`) и координаты (`floor`, `x`, `y`, `source`) от интерфейса. Для точной карты нужны согласованные планы, система координат и проверенное сопоставление каждой площадки с текущим ID каталога. Случайные позиции не назначаются. Тяжёлая map library не подключена.
-
-QA: `/map`, поиск Zara / zar / Big Chefs / CAVEA, все категории, этажи, сброс, selected panel, VIEW DETAILS, deep links трёх типов, homepage и header. Проверены 1440, 1280, 1024, 768, 430, 390, 375 и 320 px; горизонтального переполнения, ошибок runtime/hydration и нарушений в автоматической axe-проверке нет. Lint и production build проходят. Visit, Events и Offers добавлены отдельными страницами.
-
-## Запуск проверок
-
-Финальный polish Entertainment: новый hero `hero-evening-play.webp` показывает вечерний боулинг, движение и компанию друзей; заголовок — THE FUN / STARTS HERE. Композиция hero, CHOOSE YOUR PACE и четыре полноценные секции сохранены. Новый canonical route Oktopus — `/entertainment/oktopus-fitness`, прежний `/entertainment/oktopus` перенаправляется на него с HTTP 308. Повторно подтверждены этажи: CAVEA, Bowling, Wonderland — 4; Oktopus — 3. Часы и заполненные сайты совпадают с отдельными официальными записями; индивидуальные телефоны, часы Oktopus и сайты Bowling/Wonderland не подставлены. Источник и полный prompt нового asset добавлены в `public/images/entertainment/SOURCES.md`.
-
-Проверка правил кода и ошибок TypeScript:
-
-```powershell
-npm.cmd run lint
-npm.cmd run typecheck
+```
+app/[locale]/   pages for /en, /ru, /ka
+components/     UI components
+data/           stores, dining, entertainment (source-backed)
+messages/       EN / RU / KA dictionaries
+tests/          Playwright end-to-end tests
+docs/           QA reports, case study, developer notes
 ```
 
-Сборка для публикации:
+<p align="center">⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ &nbsp; =^･ω･^= &nbsp; ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</p>
 
-```powershell
-npm.cmd run build
-```
+<div align="center">
 
-## Где что находится
+🎀 Made by **[Sofia Stetsiuk](https://github.com/silestiari)** — QA Engineer × Game Designer  
+[Portfolio](https://sofia-stetsiuk-portfolio.vercel.app/en) · [Telegram](https://t.me/silestiari)
 
-- `app/[locale]/page.tsx` — состав главной страницы.
-- `app/globals.css` — цвета, размеры, оформление и мобильная версия.
-- `app/[locale]/layout.tsx` — шрифт и название вкладки браузера.
-- `components/` — отдельные блоки страницы; `reveal.tsx` отвечает за мягкое появление секций.
-- `lib/mall-data.ts` — проверенные цифры и подборка брендов.
-- `lib/homepage-media.ts` — источники изображений и переключение hero между фото и видео.
-- `lib/experience-media.ts` — источники изображений новых секций; заменить здесь на официальный контент.
-- `lib/experience-data.ts` — подтверждённые заведения и развлечения, ссылки на официальный каталог.
-- `lib/homepage-content.ts` — данные событий, брендовых историй, контактов, этажей, галереи и footer; источники и статусы публикации.
-- `components/immersive-image.tsx` — плавный scale изображений при обычной прокрутке. При reduced motion transform отключён в CSS; начальная разметка сервера и браузера совпадает.
-- `public/images/` — временные визуальные материалы.
-
-## Данные и ограничения
-
-Факты проверены 4 октября 2026 года по [официальной главной](https://grandmall.com.ge/en), [странице о торговом центре](https://grandmall.com.ge/about) и [публичному списку магазинов](https://grandmall.com.ge/app/GetShops.php?Type=1&Cats=).
-
-Официальная формулировка: около 100 брендовых магазинов, 5 этажей, более 24 000 м² **арендуемой** площади. Четыре этажа занимают торговые объекты, один — парковка. Это не утверждение о пяти торговых этажах или общей площади здания.
-
-Фильтры Brands на homepage работают по подборке из 18 проверенных брендов. Explore All Stores открывает полный каталог `/stores`. Для Services показан контакт информационной команды. Stores, Dining и Entertainment открывают отдельные страницы; Offers, Events и Visit ведут на `/offers`, `/events` и `/visit`. GE / EN / RU в header и footer переключают локальные страницы, сохраняя маршрут, slug, параметры и якорь.
-
-Актуальные даты мероприятий и скидки не подтверждены. Демонстрационные записи с придуманными датами удалены. `data/events.ts` и `data/offers.ts` сейчас пусты; для публикации требуются status: published, verified: true и source. На `/events` и `/offers` отображаются editorial empty states с атмосферными изображениями и ссылками на официальные социальные страницы. Homepage сохраняет нейтральные editorial stories; VIEW ALL EVENTS открывает `/events`. Раздел Offers подписан WHAT’S NEW / BRAND EDIT и содержит брендовые истории без обещаний скидок или наличия конкретных товаров. Присутствие [ZARA](https://grandmall.com.ge/en/brands/zara) и [Massimo Dutti](https://grandmall.com.ge/en/brands/massimo-duti) повторно проверено по официальным страницам.
-
-В Plan Your Visit адрес подтверждён [официальной политикой конфиденциальности](https://grandmall.com.ge/privacy-policy), часы информационной стойки и парковки, 150 мест и доступность — [страницей Services](https://grandmall.com.ge/services). 10:00–22:00 обозначает часы стойки, а не всех заведений. Контакты и соцсети взяты с официальной главной. Transport предлагает обратиться к команде за вариантами проезда, без неподтверждённых маршрутов или транспортных услуг.
-
-Mall Map Preview использует уровни −1 и 1–4: торговые уровни подтверждены [официальной картой](https://map.grandmall.com.ge/), парковочный — страницей About. Абстрактная схема показывает только уровни; поиск работает по общему каталогу Stores, Dining и Entertainment; подтверждённый этаж выбирается автоматически. Точные места и маршруты открываются на официальной карте. Gift Card в footer открывает email-запрос; About, Leasing, Privacy и Terms ведут на существующие официальные страницы.
-
-Заведения Big Chefs, Oliva Café и Dunkin подтверждены [официальным каталогом питания](https://grandmall.com.ge/app/GetShops.php?Type=2&Cats=). CAVEA, Bowling, Oktopus и Wonderland подтверждены [каталогом развлечений](https://grandmall.com.ge/app/GetShops.php?Type=3&Cats=). Проверено 4 октября 2026 года. В подборках не указаны непроверенные часы, этажи, цены или услуги. Ссылки заведений открывают локальные detail pages; CTA hero Dining прокручивает страницу к каталогу.
-
-Текущие assets — **не фотографии Grand Mall или его магазинов**:
-
-- `hero-light-study.svg` — абстрактная векторная композиция со стеклом и светом, без изображения случайного здания.
-- `fashion-gallery-placeholder.jpg` — сгенерированный через встроенный imagegen просторный fashion-интерьер. Происхождение assets описано только в документации; внутренних подписей на странице нет. [Полный prompt](public/images/ASSETS.md).
-- Новые атриум, ресторан, кофе, кинотеатр, боулинг и fitness — сгенерированные временные изображения, **не фотографии указанных заведений**. [Файлы и полные prompts](public/images/CONTINUATION-ASSETS.md). JPEG-файлы сжаты и загружаются по мере прокрутки через `next/image`.
-- SHOP, EAT, PLAY и Wonderland получили собственные изображения: fashion-сцена с движением, детали совместного brunch, абстрактная cinematic-сцена и сдержанная детская игровая зона. [Файлы и prompts](public/images/REFINEMENT-ASSETS.md). На homepage нет повторяющихся основных изображений; Dining сохраняет отдельные ресторанный интерьер и фотографию кофе.
-- Для завершения homepage добавлены десять отдельных временных изображений: editorial stories, детали одежды, побережье и lifestyle. Это сгенерированные материалы, а не документальные фото Grand Mall, анонсы событий или фотографии продукции брендов. [Файлы и полные prompts](public/images/COMPLETION-ASSETS.md). Заменяются в `lib/homepage-content.ts`.
-
-Для замены укажите официальный файл в `lib/homepage-media.ts`. Для hero-видео используйте `kind: "video"`, `src` и `poster`. Видео без звука, с повтором; при настройке reduced motion автозапуск отключается. У официального изображения брендов обновите `alt`. Старые Unsplash-фото больше не используются.
-
-Индикатор разработки Next.js («N») отключён через `devIndicators: false`. Внешний вид существующих секций сохранён; в шапке активированы ссылки Dining и Entertainment.
-
-EAT уплотнён как introduction к Dining. Wonderland оформлен крупной композицией с изображением и текстом, сопоставимой с соседними entertainment items. В списке Dining стрелки и линии мягко реагируют на hover и keyboard focus.
-
-CTA SHOP открывает `/stores`; EAT / PLAY используют существующие якоря, без переходов на ещё не созданные локальные страницы. Внешние ссылки Dining и entertainment items проверены 4 октября 2026 года: HTTP 200, страницы соответствуют названиям заведений.
-
-## Настройка инструментов
-
-Финальный QA: проверены ширины 1440, 1280, 1024, 768, 430, 390, 375 и 320 px, а также горизонтальный экран 844 × 390. Проверены заголовки, изображения, меню, фокус, Escape, блокировка прокрутки, поиск, категории, этажи и переходы. В дев-сервере нет runtime/hydration ошибок и горизонтального переполнения. Axe не выявил нарушений в проверенном наборе WCAG A/AA и best practices; это автоматическая проверка, а не полная сертификация доступности.
-
-Исправлен контраст вторичных подписей, читаемость шапки и ссылок на hero, увеличены области нажатия мелких мобильных элементов. Кнопки закрытия меню и поиска остаются видимыми при прокрутке короткого экрана. Изображения ниже первого экрана остаются lazy; при начальной загрузке браузер запрашивает только hero и ближайший к экрану материал. Актуальные результаты проверки внешних ссылок и ограничения сторонних сайтов приведены в финальном отчёте; внутренних ссылок без цели и href="#" нет. Lint, TypeScript и production build проходят.
-
-Next.js 16.3.8, React 19.2.8, Tailwind CSS 4.3.3, Framer Motion. TypeScript 7.0.2 используется для проверки через `tsc`, TypeScript 6.0.2 — как совместимый программный интерфейс для Next.js и typescript-eslint. Это [документированная схема Microsoft](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0).
-
-ESLint 9.39.5 оставлен из-за несовместимости React-плагинов Next.js с ESLint 10. npm отмечает ESLint 9 как неподдерживаемый. Обновить после появления совместимых плагинов.
-
-`npm audit` показывает пять предупреждений высокой важности в цепочке зависимостей инструмента проверки кода (`braces`, GHSA-vfj7-8cjw-p6xm). Исправленной версии пока нет; предложенный npm принудительный откат на инструменты Next.js 14 не применялся. В зависимостях работающего сайта предупреждений нет (`npm audit --omit=dev`).
-
-Страница `/visit` продолжает существующий editorial стиль: essential information, directions, location panel, транспорт, парковка, accessibility, quick links и контакт. `data/visitor-info.ts` — общий источник для Visit, homepage и footer. Проверено 5 октября 2026 года: [адрес](https://grandmall.com.ge/privacy-policy), [контакты](https://grandmall.com.ge/en), [сервисы](https://grandmall.com.ge/services). Часы 10:00–22:00 относятся к информационной стойке и парковке; единый график всех заведений и праздничные часы не заявлены. Подтверждены 150 мест на минус-уровне, зарядка электромобилей, лифты, доступный вход и специальные парковочные места. Номера автобусов, время поездки и доступные туалеты не опубликованы в используемых источниках и не выдуманы. Directions строится по адресу без координат. City location panel не изображает план этажей: необязательное поле `locationEmbed` подготовлено для будущей карты города. Header/footer Visit и homepage Plan your visit ведут на `/visit`, Contact — на `/visit#contact`.
-
-
-Events поддерживает featured event, upcoming list и /events/[slug]: title/slug обязательны, image, даты, описание и location опциональны. Неизвестный или неопубликованный slug возвращает 404, ссылки на несуществующие события не показываются. Offers поддерживает brand, title, slug, image, даты, shortDescription и link. DISCOVER MORE на homepage открывает /offers; active navigation работает на обеих страницах. Проверены desktop/tablet/mobile 1440–320 px, images, CTA, keyboard/accessibility и сохранность остальных маршрутов. Шаблон event detail и фильтрация публикаций проверяются изолированными QA fixtures без добавления выдуманного публичного контента. Страницы доступны на EN, RU и KA через общие шаблоны локализации.
-
+</div>
