@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/readme/banner.svg" width="100%" alt="Grand Mall Batumi — trilingual shopping-mall website"/>
+<img src="docs/readme/banner.jpg" width="100%" alt="Grand Mall Batumi — trilingual shopping-mall website"/>
 
 <a href="https://grand-mall-three.vercel.app"><img src="https://img.shields.io/badge/Live_site-FF5FA2?style=for-the-badge&logo=vercel&logoColor=white"/></a>
 <a href="docs/portfolio-qa-case-study.md"><img src="https://img.shields.io/badge/QA_case_study-E0307E?style=for-the-badge&logo=checkmarx&logoColor=white"/></a>
